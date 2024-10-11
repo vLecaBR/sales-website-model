@@ -1,6 +1,7 @@
 // Footer.js
 import React from 'react';
 import styled from 'styled-components';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 // Styled components
 const FooterContainer = styled.footer`
@@ -92,16 +93,13 @@ const Footer = () => {
 
         {/* Seção de redes sociais */}
         <FooterSection>
-          <SectionTitle>Siga-nos</SectionTitle>
+          <SectionTitle>Redes</SectionTitle>
           <SocialIcons>
             <SocialIcon href="#" target="_blank">
-              <i className="fab fa-facebook-f" />
+            <FaInstagram />
             </SocialIcon>
             <SocialIcon href="#" target="_blank">
-              <i className="fab fa-instagram" />
-            </SocialIcon>
-            <SocialIcon href="#" target="_blank">
-              <i className="fab fa-twitter" />
+            <FaWhatsapp />
             </SocialIcon>
           </SocialIcons>
         </FooterSection>
