@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiMenu, FiX, FiUser, FiShoppingCart, FiSearch, FiSettings, FiShoppingBag, FiTag } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -85,7 +86,7 @@ const LoginLink = styled.span`
 
 const LinksContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-right: 2rem;
 `;
@@ -102,6 +103,7 @@ const Promocoes = styled.span`
     color: #A2FA28;
   }
 `;
+
 
 const Sidebar = styled.div`
   position: fixed;
@@ -160,7 +162,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Header principal */}
       <StyledHeader>
         <LeftSection>
           <HamburgerMenu onClick={toggleMenu} aria-label="Menu">
@@ -174,60 +175,59 @@ export default function Header() {
             <SearchInput type="text" placeholder="Search..." />
           </SearchContainer>
         </CenterSection>
+
         <RightSection>
-          {/* Seção de links */}
           <LinksContainer>
             <Promocoes>Promoções</Promocoes>
           </LinksContainer>
-          {/* Seção de entre/cadastrar */}
           <ProfileSection>
             <LoginLink>Entre / Crie sua conta</LoginLink>
           </ProfileSection>
         </RightSection>
       </StyledHeader>
 
-      {/* Sidebar*/}
+      {/* Sidebar */}
       <Sidebar isOpen={isMenuOpen}>
         <SidebarCloseIcon onClick={toggleMenu} />
-        
-        <SidebarItem href="#">
+
+        <SidebarItem as={Link} to="/account">
           <SidebarIcon>
             <FiUser />
           </SidebarIcon>
           Minha Conta
         </SidebarItem>
 
-        {/*Carrinho */}
-        <SidebarItem href="#">
+        {/* Carrinho */}
+        <SidebarItem as={Link} to="/cart">
           <SidebarIcon>
             <FiShoppingCart />
           </SidebarIcon>
           Carrinho
         </SidebarItem>
 
-        {/*Compras */}
-        <SidebarItem href="#">
+        {/* Compras */}
+        <SidebarItem as={Link} to="/purchases">
           <SidebarIcon>
             <FiShoppingBag />
           </SidebarIcon>
           Compras
         </SidebarItem>
 
-        {/*Cupons */}
-        <SidebarItem href="#">
+        {/* Cupons */}
+        <SidebarItem as={Link} to="/coupons">
           <SidebarIcon>
             <FiTag />
           </SidebarIcon>
           Cupons
         </SidebarItem>
 
-        {/*Configurações */}
-        <SidebarItem href="#">
-            <SidebarIcon>
-              <FiSettings />
-            </SidebarIcon>
-            Configurações
-          </SidebarItem>
+        {/* Configurações */}
+        <SidebarItem as={Link} to="/settings">
+          <SidebarIcon>
+            <FiSettings />
+          </SidebarIcon>
+          Configurações
+        </SidebarItem>
       </Sidebar>
     </>
   );
