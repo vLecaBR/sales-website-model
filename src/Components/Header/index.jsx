@@ -57,6 +57,10 @@ const SearchInput = styled.input`
 const HamburgerMenu = styled.div`
   font-size: 2rem;
   cursor: pointer;
+
+  &:hover {
+    color: #A2FA28; /* Muda a cor no hover */
+  }
 `;
 
 const ProfileSection = styled.div`
@@ -66,16 +70,16 @@ const ProfileSection = styled.div`
   margin-right: 2rem;
 `;
 
-const LoginLink = styled.a`
+const LoginLink = styled.span`
   color: #fff;
-  text-decoration: none;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 3rem; /* Espaçamento acima do texto */
   margin-right: 1rem; /* Espaçamento à direita do texto */
+  transition: color 0.3s ease; /* Transição suave para o hover */
 
   &:hover {
-    text-decoration: underline;
+    color: #A2FA28; /* Muda a cor no hover */
   }
 `;
 
@@ -92,6 +96,10 @@ const Sidebar = styled.div`
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
   box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    color: #A2FA28; /* Muda a cor no hover */
+  }
 `;
 
 const SidebarCloseIcon = styled(FiX)`
@@ -99,6 +107,10 @@ const SidebarCloseIcon = styled(FiX)`
   cursor: pointer;
   color: #fff;
   margin-bottom: 2rem;
+
+  &:hover {
+    color: #A2FA28; /* Muda a cor no hover */
+  }
 `;
 
 const SidebarItem = styled.a`
@@ -111,13 +123,17 @@ const SidebarItem = styled.a`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #D4D4FF;
+    color: #A2FA28; /* Muda a cor no hover */
   }
 `;
 
 const SidebarIcon = styled.div`
   margin-right: 1rem;
   font-size: 1.5rem;
+
+  &:hover {
+    color: #A2FA28; /* Muda a cor no hover */
+  }
 `;
 
 export default function Header() {
@@ -147,7 +163,7 @@ export default function Header() {
         <RightSection>
           {/* Seção de login com ícone de perfil acima do texto */}
           <ProfileSection>
-            <LoginLink href="#">Entre / Crie sua conta</LoginLink>
+            <LoginLink>Entre / Crie sua conta</LoginLink>
           </ProfileSection>
         </RightSection>
       </StyledHeader>
