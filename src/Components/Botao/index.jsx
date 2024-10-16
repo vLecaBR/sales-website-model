@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  background-color: #4CAF50; /* Green */
+  background-color: #A2FA28; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   border-radius: 4px;
 
   &:hover {
-    background-color: #45a049;
+    background-color: #A2FA28;
   }
 `;
 
