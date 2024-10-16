@@ -1,102 +1,123 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { FiMenu, FiX } from 'react-icons/fi'; // Ícone de fechar para o menu mobile
+import { FiMenu, FiX, FiUser, FiShoppingCart, FiSearch, FiSettings } from 'react-icons/fi';
 
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0;
+  padding: 0 2rem;
   height: 10vh;
-  background-color: #333;
+  background-color: #8445FF;
   color: #fff;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 999;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
 `;
 
-const LogoHeader = styled.img`
-  height: 64px;
-  width: 64px;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  cursor: pointer;
-`;
-
-const NavLinks = styled.nav`
-  display: flex;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; // Mostra os links no mobile ao abrir o menu
-    position: absolute;
-    top: 12vh;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 1rem;
-  }
-`;
-
-const NavList = styled.ul`
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const NavLink = styled.a`
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin: 0 1.5rem;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #adadad;
-  }
-
-  @media (max-width: 768px) {
-    margin: 1rem 0;
-  }
-`;
-
-const IconContainer = styled.div`
+const LeftSection = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const IconHeaderLink = styled.a`
-  color: #fff;
-  font-size: 1.5rem;
-  /* margin-left: 0.1rem; */
-  margin-right: 1rem;
-  transition: color 0.3s ease;
+const CenterSection = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+`;
 
-  &:hover {
-    color: #adadad;
-  }
+const RightSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #D4D4FF;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  width: 60%;
+  max-width: 500px;
+`;
+
+const SearchInput = styled.input`
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: #333;
 `;
 
 const HamburgerMenu = styled.div`
-  display: none;
   font-size: 2rem;
   cursor: pointer;
+`;
 
-  @media (max-width: 768px) {
-    display: block;
+const ProfileSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o ícone e o texto */
+  margin-right: 2rem;
+`;
+
+const LoginLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 3rem; /* Espaçamento acima do texto */
+  margin-right: 1rem; /* Espaçamento à direita do texto */
+
+  &:hover {
+    text-decoration: underline;
   }
+`;
+
+// Sidebar styles (agora à esquerda)
+const Sidebar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #4A00E0;
+  padding: 2rem;
+  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+`;
+
+const SidebarCloseIcon = styled(FiX)`
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 2rem;
+`;
+
+const SidebarItem = styled.a`
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #D4D4FF;
+  }
+`;
+
+const SidebarIcon = styled.div`
+  margin-right: 1rem;
+  font-size: 1.5rem;
 `;
 
 export default function Header() {
@@ -107,47 +128,57 @@ export default function Header() {
   };
 
   return (
-    <StyledHeader>
-      <LogoHeader src="https://w7.pngwing.com/pngs/130/947/png-transparent-logo-business-exemplis-brand-design-angle-text-rectangle.png" alt="logo" />
+    <>
+      {/* Header principal */}
+      <StyledHeader>
+        <LeftSection>
+          <HamburgerMenu onClick={toggleMenu} aria-label="Menu">
+            <FiMenu />
+          </HamburgerMenu>
+        </LeftSection>
 
-      <NavLinks isOpen={isMenuOpen}>
-        <NavList>
-          <li>
-            <NavLink href="#" target="_blank" rel="noopener noreferrer">
-              Página Principal
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#" target="_blank" rel="noopener noreferrer">
-              Produtos
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#" target="_blank" rel="noopener noreferrer">
-              Promoções
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#" target="_blank" rel="noopener noreferrer">
-              Tal página
-            </NavLink>
-          </li>
-        </NavList>
-      </NavLinks>
+        <CenterSection>
+          <SearchContainer>
+            <FiSearch />
+            <SearchInput type="text" placeholder="Search..." />
+          </SearchContainer>
+        </CenterSection>
 
-      <IconContainer>
-        <IconHeaderLink href="#" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
-        </IconHeaderLink>
+        <RightSection>
+          {/* Seção de login com ícone de perfil acima do texto */}
+          <ProfileSection>
+            <LoginLink href="#">Entre / Crie sua conta</LoginLink>
+          </ProfileSection>
+        </RightSection>
+      </StyledHeader>
 
-        <IconHeaderLink href="#" target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp />
-        </IconHeaderLink>
-      </IconContainer>
+      {/* Sidebar (agora à esquerda) */}
+      <Sidebar isOpen={isMenuOpen}>
+        <SidebarCloseIcon onClick={toggleMenu} />
+        
+        <SidebarItem href="#">
+          <SidebarIcon>
+            <FiUser />
+          </SidebarIcon>
+          Minha Conta
+        </SidebarItem>
 
-      <HamburgerMenu onClick={toggleMenu} aria-label="Menu">
-        {isMenuOpen ? <FiX /> : <FiMenu />}
-      </HamburgerMenu>
-    </StyledHeader>
+        <SidebarItem href="#">
+          <SidebarIcon>
+            <FiShoppingCart />
+          </SidebarIcon>
+          Carrinho
+        </SidebarItem>
+
+        <SidebarItem href="#">
+          <SidebarIcon>
+            <FiSettings />
+          </SidebarIcon>
+          Configurações
+        </SidebarItem>
+
+        {/* Adicione mais itens conforme necessário */}
+      </Sidebar>
+    </>
   );
 }

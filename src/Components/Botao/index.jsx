@@ -21,7 +21,7 @@ const StyledButton = styled.button`
 
 function Botao() {
   return (
-    <StyledButton>Botão</StyledButton>
+    <StyledButton>Comprar</StyledButton>
   );
 }
 

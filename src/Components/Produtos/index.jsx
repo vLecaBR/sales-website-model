@@ -1,6 +1,7 @@
 // ProductCard.js
 import React from 'react';
 import styled from 'styled-components';
+import Botao from '../Botao';
 
 // Styled components
 const Card = styled.div`
@@ -82,7 +83,7 @@ const ProductCard = ({ product }) => {
         <ProductName>{product.name}</ProductName>
         <PriceCash>{`R$ ${product.priceCash}`}</PriceCash>
         <PriceInstallments>{`ou ${product.installments}x de R$ ${product.priceInstallment} sem juros`}</PriceInstallments>
-        <Button>Comprar</Button>
+        <Botao>Comprar</Botao>
       </InfoContainer>
     </Card>
   );
