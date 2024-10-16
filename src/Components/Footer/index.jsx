@@ -40,34 +40,39 @@ const SectionTitle = styled.h4`
 `;
 
 const FooterLink = styled.a`
-  color: #aaa;
+  color: #E1E2EF;
   text-decoration: none;
   font-size: 16px;
 
   &:hover {
-    color: #fff;
+    color: #A2FA28;
   }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   gap: 15px;
+  
+  &:hover {
+    color: #A2FA28;
+  }
 `;
 
 const SocialIcon = styled.a`
-  color: #aaa;
+  color: #E1E2EF;
   font-size: 24px;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #fff;
+    color: #A2FA28;
   }
 `;
 
 const Copyright = styled.p`
   font-size: 14px;
-  color: #aaa;
+  color: #A2FA28;
   margin-top: 20px;
+  
 `;
 
 // Componente principal

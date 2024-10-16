@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FiMenu, FiX, FiUser, FiShoppingCart, FiSearch, FiSettings } from 'react-icons/fi';
+import { FiMenu, FiX, FiUser, FiShoppingCart, FiSearch, FiSettings, FiShoppingBag, FiTag } from 'react-icons/fi';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -59,14 +59,14 @@ const HamburgerMenu = styled.div`
   cursor: pointer;
 
   &:hover {
-    color: #A2FA28; /* Muda a cor no hover */
+    color: #A2FA28;
   }
 `;
 
 const ProfileSection = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza o ícone e o texto */
+  align-items: center;
   margin-right: 2rem;
 `;
 
@@ -74,16 +74,35 @@ const LoginLink = styled.span`
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 3rem; /* Espaçamento acima do texto */
-  margin-right: 1rem; /* Espaçamento à direita do texto */
-  transition: color 0.3s ease; /* Transição suave para o hover */
+  margin-top: 3rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #A2FA28; /* Muda a cor no hover */
+    color: #A2FA28;
   }
 `;
 
-// Sidebar styles (agora à esquerda)
+const LinksContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2rem;
+`;
+
+const Promocoes = styled.span`
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 3rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #A2FA28;
+  }
+`;
+
 const Sidebar = styled.div`
   position: fixed;
   top: 0;
@@ -96,10 +115,6 @@ const Sidebar = styled.div`
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
   box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    color: #A2FA28; /* Muda a cor no hover */
-  }
 `;
 
 const SidebarCloseIcon = styled(FiX)`
@@ -109,7 +124,7 @@ const SidebarCloseIcon = styled(FiX)`
   margin-bottom: 2rem;
 
   &:hover {
-    color: #A2FA28; /* Muda a cor no hover */
+    color: #A2FA28;
   }
 `;
 
@@ -123,7 +138,7 @@ const SidebarItem = styled.a`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #A2FA28; /* Muda a cor no hover */
+    color: #A2FA28;
   }
 `;
 
@@ -132,7 +147,7 @@ const SidebarIcon = styled.div`
   font-size: 1.5rem;
 
   &:hover {
-    color: #A2FA28; /* Muda a cor no hover */
+    color: #A2FA28;
   }
 `;
 
@@ -159,16 +174,19 @@ export default function Header() {
             <SearchInput type="text" placeholder="Search..." />
           </SearchContainer>
         </CenterSection>
-
         <RightSection>
-          {/* Seção de login com ícone de perfil acima do texto */}
+          {/* Seção de links */}
+          <LinksContainer>
+            <Promocoes>Promoções</Promocoes>
+          </LinksContainer>
+          {/* Seção de entre/cadastrar */}
           <ProfileSection>
             <LoginLink>Entre / Crie sua conta</LoginLink>
           </ProfileSection>
         </RightSection>
       </StyledHeader>
 
-      {/* Sidebar (agora à esquerda) */}
+      {/* Sidebar*/}
       <Sidebar isOpen={isMenuOpen}>
         <SidebarCloseIcon onClick={toggleMenu} />
         
@@ -179,6 +197,7 @@ export default function Header() {
           Minha Conta
         </SidebarItem>
 
+        {/*Carrinho */}
         <SidebarItem href="#">
           <SidebarIcon>
             <FiShoppingCart />
@@ -186,14 +205,29 @@ export default function Header() {
           Carrinho
         </SidebarItem>
 
+        {/*Compras */}
         <SidebarItem href="#">
           <SidebarIcon>
-            <FiSettings />
+            <FiShoppingBag />
           </SidebarIcon>
-          Configurações
+          Compras
         </SidebarItem>
 
-        {/* Adicione mais itens conforme necessário */}
+        {/*Cupons */}
+        <SidebarItem href="#">
+          <SidebarIcon>
+            <FiTag />
+          </SidebarIcon>
+          Cupons
+        </SidebarItem>
+
+        {/*Configurações */}
+        <SidebarItem href="#">
+            <SidebarIcon>
+              <FiSettings />
+            </SidebarIcon>
+            Configurações
+          </SidebarItem>
       </Sidebar>
     </>
   );
