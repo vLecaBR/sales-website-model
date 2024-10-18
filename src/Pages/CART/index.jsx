@@ -1,5 +1,5 @@
 // CartPage.js
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FiX } from 'react-icons/fi';
 import Header from '../../Components/Header'; // Ajuste o caminho conforme necessário
@@ -87,33 +87,7 @@ const CheckoutButton = styled.button`
   }
 `;
 
-const itemsInCart = [
-  {
-    id: 1,
-    name: 'Produto 1',
-    price: 20.0,
-    image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg',
-    quantity: 1,
-  },
-  {
-    id: 2,
-    name: 'Produto 2',
-    price: 15.0,
-    image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg',
-    quantity: 2,
-  },
-  {
-    id: 3,
-    name: 'Produto 3',
-    price: 30.0,
-    image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg',
-    quantity: 1,
-  },
-];
-
-export default function CartPage() {
-  const [cartItems, setCartItems] = useState(itemsInCart);
-
+export default function CartPage({ cartItems, setCartItems }) {
   const removeFromCart = (id) => {
     setCartItems(cartItems.filter(item => item.id !== id));
   };
@@ -127,18 +101,22 @@ export default function CartPage() {
 
       {/* Conteúdo do carrinho */}
       <CartContainer>
-        {cartItems.map(item => (
-          <CartItem key={item.id}>
-            <ItemDetails>
-              <ItemImage src={item.image} alt={item.name} />
-              <ItemName>{item.name}</ItemName>
-              <ItemPrice>R$ {item.price.toFixed(2)}</ItemPrice>
-            </ItemDetails>
-            <RemoveButton onClick={() => removeFromCart(item.id)}>
-              <FiX /> Remover
-            </RemoveButton>
-          </CartItem>
-        ))}
+        {cartItems.length === 0 ? (
+          <h2 style={{ textAlign: 'center' }}>Seu carrinho está vazio!</h2>
+        ) : (
+          cartItems.map(item => (
+            <CartItem key={item.id}>
+              <ItemDetails>
+                <ItemImage src={item.image} alt={item.name} />
+                <ItemName>{item.name}</ItemName>
+                <ItemPrice>R$ {item.price.toFixed(2)} x {item.quantity}</ItemPrice>
+              </ItemDetails>
+              <RemoveButton onClick={() => removeFromCart(item.id)}>
+                <FiX /> Remover
+              </RemoveButton>
+            </CartItem>
+          ))
+        )}
 
         {/* Resumo do carrinho */}
         <CartSummary>
