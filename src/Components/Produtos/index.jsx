@@ -48,7 +48,7 @@ const ProductName = styled.h3`
 const PriceCash = styled.p`
   font-size: 22px;
   font-weight: bold;
-  color: #A2FA28;
+  color: #5F9F04;
   margin-bottom: 5px;
 `;
 

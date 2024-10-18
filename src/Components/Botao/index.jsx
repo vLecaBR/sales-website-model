@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  background-color: #A2FA28; /* Green */
+  background-color: #5F9F04; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;

@@ -70,7 +70,7 @@ const SocialIcon = styled.a`
 
 const Copyright = styled.p`
   font-size: 14px;
-  color: #A2FA28;
+  color: #5F9F04;
   margin-top: 20px;
   
 `;
