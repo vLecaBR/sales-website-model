@@ -3,28 +3,29 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProductCard from './Components/Produtos';
-import Cart from './Pages/CART'; // Importe a página de Carrinho
+import Cart from './Pages/CART';
+import ProductPage from './Pages/Product'; 
 
 function App() {
   const products = [
     {
+      id: 1,
       name: 'Iphone 16',
       image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg',
       priceCash: '10000',
       installments: 10,
       priceInstallment: '1200',
+      description: 'Um smartphone revolucionário com tecnologia de ponta.',
     },
     // Adicione outros produtos conforme necessário
   ];
 
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-
-        <main style={{ padding: '20px' }}>
+        <main style={{ padding: '20px', flex: 1 }}>
           <Routes>
-            {/* Rota para a página inicial */}
             <Route
               path="/"
               element={
@@ -39,19 +40,17 @@ function App() {
                       marginTop: '50px',
                     }}
                   >
-                    {products.map((product, index) => (
-                      <ProductCard key={index} product={product} />
+                    {products.map((product) => (
+                      <ProductCard key={product.id} product={product} />
                     ))}
                   </div>
                 </>
               }
             />
-
-            {/* Rota para a página de carrinho */}
             <Route path="/cart" element={<Cart />} />
+            <Route path="/produto/:id" element={<ProductPage products={products} />} />
           </Routes>
         </main>
-
         <Footer />
       </div>
     </Router>
