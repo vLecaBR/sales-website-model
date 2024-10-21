@@ -78,6 +78,7 @@ const LoginLink = styled.span`
   margin-top: 3rem;
   margin-right: 1rem;
   transition: color 0.3s ease;
+  text-decoration: none;
 
   &:hover {
     color: #A2FA28;

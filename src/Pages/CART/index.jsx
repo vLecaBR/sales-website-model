@@ -132,7 +132,7 @@ export default function CartPage({ cartItems, setCartItems }) {
                 <ItemInfo>
                   <ItemName>{item.name}</ItemName>
                   <ItemPrice>
-                    R$ {item.priceCash ? item.priceCash.toFixed(2) : '0.00'} x {item.quantity ? item.quantity : 1}
+                    R$ {item.priceCash ? item.priceCash.toFixed(2) : ''} x {item.quantity ? item.quantity : 1}
                   </ItemPrice>
                 </ItemInfo>
               </ItemDetails>
