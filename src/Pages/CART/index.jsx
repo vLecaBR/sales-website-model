@@ -10,6 +10,9 @@ const CartContainer = styled.div`
   padding: 2rem;
   background-color: #f4f4f4;
   min-height: 90vh; /* Para ocupar o restante da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const CartItem = styled.div`
@@ -17,10 +20,12 @@ const CartItem = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;
 `;
 
 const ItemDetails = styled.div`
@@ -29,10 +34,15 @@ const ItemDetails = styled.div`
 `;
 
 const ItemImage = styled.img`
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  margin-right: 1rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin-right: 1.5rem;
+`;
+
+const ItemInfo = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const ItemName = styled.h2`
@@ -50,8 +60,8 @@ const RemoveButton = styled.button`
   border: none;
   color: #ff4d4d;
   cursor: pointer;
-  font-size: 1rem;
-  transition: color 0.2s;
+  font-size: 1.2rem;
+  transition: color 0.3s;
 
   &:hover {
     color: #ff1a1a;
@@ -60,56 +70,71 @@ const RemoveButton = styled.button`
 
 const CartSummary = styled.div`
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
 `;
 
 const TotalPrice = styled.h2`
-  font-size: 1.5rem;
-  margin: 0;
-  color: #8445FF; /* Cor do cabeçalho */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #8445FF;
 `;
 
 const CheckoutButton = styled.button`
-  background-color: #8445FF;
-  color: white;
-  border: none;
+  width: 100%;
   padding: 1rem;
+  background: linear-gradient(90deg, #8445FF, #A2FA28);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s;
 
   &:hover {
-    background-color: #6f36b2; /* Cor um pouco mais escura para hover */
+    background: linear-gradient(90deg, #6f36b2, #8de72c);
   }
+`;
+
+const EmptyCartMessage = styled.h2`
+  text-align: center;
+  color: #666;
 `;
 
 export default function CartPage({ cartItems, setCartItems }) {
   const removeFromCart = (id) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
+    setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  // Corrigindo o cálculo do total
+  const total = cartItems.reduce((acc, item) => {
+    const price = item.priceCash ? item.priceCash : 0; // Usando priceCash
+    const quantity = item.quantity ? item.quantity : 1; // Garantindo que a quantidade está definida
+    return acc + price * quantity;
+  }, 0).toFixed(2);
 
   return (
     <div>
-      {/* Cabeçalho com título dinâmico */}
-      <Header title="Carrinho" /> {/* Passando o título "Carrinho" */}
+      <Header title="Carrinho" />
 
-      {/* Conteúdo do carrinho */}
       <CartContainer>
         {cartItems.length === 0 ? (
-          <h2 style={{ textAlign: 'center' }}>Seu carrinho está vazio!</h2>
+          <EmptyCartMessage>Seu carrinho está vazio!</EmptyCartMessage>
         ) : (
-          cartItems.map(item => (
+          cartItems.map((item) => (
             <CartItem key={item.id}>
               <ItemDetails>
                 <ItemImage src={item.image} alt={item.name} />
-                <ItemName>{item.name}</ItemName>
-                <ItemPrice>R$ {item.price.toFixed(2)} x {item.quantity}</ItemPrice>
+                <ItemInfo>
+                  <ItemName>{item.name}</ItemName>
+                  <ItemPrice>
+                    R$ {item.priceCash ? item.priceCash.toFixed(2) : '0.00'} x {item.quantity ? item.quantity : 1}
+                  </ItemPrice>
+                </ItemInfo>
               </ItemDetails>
               <RemoveButton onClick={() => removeFromCart(item.id)}>
                 <FiX /> Remover
@@ -119,10 +144,12 @@ export default function CartPage({ cartItems, setCartItems }) {
         )}
 
         {/* Resumo do carrinho */}
-        <CartSummary>
-          <TotalPrice>Total: R$ {total}</TotalPrice>
-          <CheckoutButton>Finalizar Compra</CheckoutButton>
-        </CartSummary>
+        {cartItems.length > 0 && (
+          <CartSummary>
+            <TotalPrice>Total: R$ {total}</TotalPrice>
+            <CheckoutButton>Finalizar Compra</CheckoutButton>
+          </CartSummary>
+        )}
       </CartContainer>
     </div>
   );

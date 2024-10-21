@@ -190,7 +190,7 @@ export default function Header() {
         <SidebarCloseIcon onClick={toggleMenu} />
 
         {/* Home */}
-        <SidebarItem as={Link} to="/">
+        <SidebarItem as={Link} to="/"> {/* OK */}
           <SidebarIcon>
             <FiHome />
           </SidebarIcon>
@@ -198,7 +198,7 @@ export default function Header() {
         </SidebarItem>
 
         {/* Minha Conta */}
-        <SidebarItem as={Link} to="/Login">
+        <SidebarItem as={Link} to="/Login"> {/* OK */}
           <SidebarIcon>
             <FiUser />
           </SidebarIcon>
@@ -206,7 +206,7 @@ export default function Header() {
         </SidebarItem>
 
         {/* Carrinho */}
-        <SidebarItem as={Link} to="/cart">
+        <SidebarItem as={Link} to="/cart"> {/* OK */}
           <SidebarIcon>
             <FiShoppingCart />
           </SidebarIcon>
