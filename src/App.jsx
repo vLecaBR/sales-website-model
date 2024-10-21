@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
@@ -5,6 +6,8 @@ import Footer from './Components/Footer';
 import ProductCard from './Components/Produtos';
 import Cart from './Pages/CART'; // Importe a página de Carrinho
 import ProductPage from './Pages/Product'; // Importe a página de Produto
+import Login from './Pages/Login'; // Importe a página de Login
+import Cadastro from './Pages/Cadastro'; // Importe a página de Cadastro
 
 function App() {
   const [cartItems, setCartItems] = useState([]); // Estado do carrinho
@@ -74,6 +77,12 @@ function App() {
 
             {/* Rota dinâmica para a página de produto individual */}
             <Route path="/produto/:id" element={<ProductPage products={products} />} />
+
+            {/* Rota para a página de login */}
+            <Route path="/login" element={<Login />} />
+
+            {/* Rota para a página de cadastro */}
+            <Route path="/Cadastro" element={<Cadastro />} />
           </Routes>
         </main>
 
