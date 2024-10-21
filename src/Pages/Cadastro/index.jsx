@@ -1,4 +1,3 @@
-// Pages/Cadastro.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -8,7 +7,6 @@ const CadastroContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
 `;
 
 const CadastroForm = styled.form`
@@ -17,6 +15,7 @@ const CadastroForm = styled.form`
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
+  text-align: center;
 `;
 
 const Input = styled.input`
@@ -26,12 +25,13 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
+  color: #333;
 `;
 
 const Button = styled.button`
   width: 100%;
   padding: 0.75rem;
-  background-color: #4a00e0;
+  background-color: #8445FF; /* Cor roxa principal */
   color: #fff;
   font-size: 1rem;
   border: none;
@@ -39,7 +39,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #6200ea;
+    background-color: #6B32CC; /* Sombra roxa ao passar o mouse */
   }
 `;
 
@@ -49,7 +49,7 @@ const RedirectLink = styled.p`
   font-size: 0.9rem;
 
   a {
-    color: #4a00e0;
+    color: #A2FA28; /* Verde vibrante */
     text-decoration: none;
 
     &:hover {
@@ -67,13 +67,10 @@ export default function Cadastro() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Verifica se as senhas coincidem
     if (password !== confirmPassword) {
       alert('As senhas não coincidem');
       return;
     }
-
-    // Simular cadastro
     alert('Cadastro bem-sucedido!');
     navigate('/login');
   };
@@ -81,7 +78,7 @@ export default function Cadastro() {
   return (
     <CadastroContainer>
       <CadastroForm onSubmit={handleSubmit}>
-        <h2>Cadastro</h2>
+        <h2 style={{ color: '#8445FF' }}>Cadastro</h2> {/* Título na cor roxa */}
         <Input
           type="text"
           placeholder="Nome"

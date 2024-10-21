@@ -198,7 +198,7 @@ export default function Header() {
         </SidebarItem>
 
         {/* Minha Conta */}
-        <SidebarItem as={Link} to="/account">
+        <SidebarItem as={Link} to="/Login">
           <SidebarIcon>
             <FiUser />
           </SidebarIcon>
