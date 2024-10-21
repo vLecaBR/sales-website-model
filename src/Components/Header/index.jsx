@@ -180,7 +180,7 @@ export default function Header() {
             <Promocoes>Promoções</Promocoes>
           </LinksContainer>
           <ProfileSection>
-            <LoginLink>Entre / Crie sua conta</LoginLink>
+            <LoginLink as={Link} to="/login">Entre / Crie sua conta</LoginLink>
           </ProfileSection>
         </RightSection>
       </StyledHeader>
