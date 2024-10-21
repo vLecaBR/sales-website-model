@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import ProductCard from './Components/Produtos';
+import ProductCard from './Components/ProductCard';
 import Cart from './Pages/CART'; // Importe a página de Carrinho
 import ProductPage from './Pages/Product'; // Importe a página de Produto
 import Login from './Pages/Login'; // Importe a página de Login
