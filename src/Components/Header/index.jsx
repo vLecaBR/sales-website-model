@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FiMenu, FiX, FiUser, FiShoppingCart, FiSearch, FiSettings, FiShoppingBag, FiTag } from 'react-icons/fi';
+import { FiMenu, FiX, FiUser, FiShoppingCart, FiSearch, FiSettings, FiShoppingBag, FiTag, FiHome } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.header`
@@ -104,7 +104,6 @@ const Promocoes = styled.span`
   }
 `;
 
-
 const Sidebar = styled.div`
   position: fixed;
   top: 0;
@@ -190,6 +189,15 @@ export default function Header() {
       <Sidebar isOpen={isMenuOpen}>
         <SidebarCloseIcon onClick={toggleMenu} />
 
+        {/* Home */}
+        <SidebarItem as={Link} to="/">
+          <SidebarIcon>
+            <FiHome />
+          </SidebarIcon>
+          Home
+        </SidebarItem>
+
+        {/* Minha Conta */}
         <SidebarItem as={Link} to="/account">
           <SidebarIcon>
             <FiUser />

@@ -14,12 +14,29 @@ function App() {
       id: 1,
       name: 'Iphone 16',
       image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg',
-      priceCash: 10000,
+      priceCash: 7000,
       installments: 10,
       priceInstallment: 1200,
       description: 'Um smartphone revolucionário com tecnologia de ponta.',
     },
-    // Adicione outros produtos conforme necessário
+    {
+      id: 2,
+      name: 'Samsung Galaxy 23 Ultra',
+      image: 'https://images3.kabum.com.br/produtos/fotos/sync_mirakl/422463/Smartphone-Samsung-Galaxy-S23-Ultra-5G-256GB-12GB-RAM-Octa-Core-C-mera-200MP-Selfie-12MP-Tela-6-8-Caneta-S-Pen-Preto_1721308269_g.jpg',
+      priceCash: 5000,
+      installments: 10,
+      priceInstallment: 600,
+      description: 'Um smartphone com uma das melhores câmeras do mercado.',
+    },
+    {
+      id: 3,
+      name: 'Iphone 15 Pro Max',
+      image: 'https://m.media-amazon.com/images/I/81IPGZtygYL._AC_SX569_.jpg',
+      priceCash: 8000,
+      installments: 10,
+      priceInstallment: 1400,
+      description: 'Um smartphone revolucionário com tecnologia de ponta.',
+    }
   ];
 
   return (
