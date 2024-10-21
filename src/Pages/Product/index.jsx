@@ -51,7 +51,7 @@ const ProductDescription = styled.p`
 `;
 
 const BuyButton = styled.button`
-  background-color: #8445FF;
+  background-color: #28A745;
   color: #fff;
   padding: 0.75rem 2rem;
   border: none;
@@ -61,7 +61,7 @@ const BuyButton = styled.button`
   margin-top: 2rem;
 
   &:hover {
-    background-color: #A2FA28;
+    background-color: #6b32cc;
   }
 `;
 

@@ -2,29 +2,70 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+// Container do produto
 const ProductContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 10px; /* Reduzindo o padding */
+  padding: 10px;
   text-align: center;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Para garantir que o cartão use a largura disponível */
-  max-width: 250px; /* Limitar a largura máxima do cartão */
-  margin: 10px; /* Adicionando margem entre os cartões */
+  width: 100%;
+  max-width: 250px;
+  margin: 10px;
 `;
 
+// Imagem do produto
 const ProductImage = styled.img`
-  width: 100%; /* A imagem ocupará 100% da largura do cartão */
-  height: 150px; /* Definindo uma altura fixa para a imagem */
+  width: 100%;
+  height: 150px;
   border-radius: 10px;
-  object-fit: contain; /* Usar 'contain' para garantir que a imagem não seja cortada */
+  object-fit: contain;
+`;
+
+// Nome do produto
+const ProductName = styled.h3`
+  font-size: 1rem;
+  margin: 10px 0;
+`;
+
+// Preço do produto
+const ProductPrice = styled.p`
+  font-size: 0.9rem;
+  margin: 10px 0;
+`;
+
+// Botão genérico reutilizável
+const Button = styled.button`
+  padding: 5px 10px;
+  background-color: ${(props) => props.bgColor || '#8445FF'};
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: ${(props) => (props.marginTop ? props.marginTop : '0')};
+
+  &:hover {
+    background-color: ${(props) => (props.bgColor === '#28A745' ? '#218838' : '#6b32cc')};
+  }
+`;
+
+// Botão de ver detalhes com estilização personalizada
+const DetailButton = styled(Button)`
+  background-color: #8445ff;
+`;
+
+// Botão de adicionar ao carrinho com estilização personalizada
+const CartButton = styled(Button)`
+  background-color: #28a745;
+  margin-top: 5px;
 `;
 
 const ProductCard = ({ product, setCartItems }) => {
   const addToCart = () => {
     setCartItems((prevItems) => {
-      const itemIndex = prevItems.findIndex(item => item.id === product.id);
+      const itemIndex = prevItems.findIndex((item) => item.id === product.id);
       if (itemIndex > -1) {
         const updatedItems = [...prevItems];
         updatedItems[itemIndex].quantity += 1;
@@ -38,16 +79,12 @@ const ProductCard = ({ product, setCartItems }) => {
   return (
     <ProductContainer>
       <ProductImage src={product.image} alt={product.name} />
-      <h3 style={{ fontSize: '1rem' }}>{product.name}</h3>
-      <p style={{ fontSize: '0.9rem' }}>R$ {product.priceCash.toFixed(2)}</p>
+      <ProductName>{product.name}</ProductName>
+      <ProductPrice>R$ {product.priceCash.toFixed(2)}</ProductPrice>
       <Link to={`/produto/${product.id}`}>
-        <button style={{ padding: '5px 10px', backgroundColor: '#8445FF', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', fontSize: '0.9rem' }}>
-          Ver Detalhes
-        </button>
+        <DetailButton>Ver Detalhes</DetailButton>
       </Link>
-      <button onClick={addToCart} style={{ padding: '5px 10px', backgroundColor: '#28A745', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginTop: '5px', fontSize: '0.9rem' }}>
-        Adicionar ao Carrinho
-      </button>
+      <CartButton onClick={addToCart}>Adicionar ao Carrinho</CartButton>
     </ProductContainer>
   );
 };
