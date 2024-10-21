@@ -16,12 +16,13 @@ const ProductContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  width: 80%;
+  width: 50%;
   max-width: 1200px;
 `;
 
 const ProductImage = styled.img`
-  width: 50%;
+  width: 30%;
+  height: auto;
   border-radius: 10px;
   margin-right: 2rem;
 `;
