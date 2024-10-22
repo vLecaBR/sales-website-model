@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+sales-website-model - Portfolio Project
+Este repositório contém o código-fonte de um site de vendas modelo, desenvolvido como parte do meu portfólio pessoal. O projeto foi construído usando React, JavaScript, e Styled Components, com o objetivo de demonstrar minhas habilidades em desenvolvimento front-end e construção de interfaces de usuário modernas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📋 Funcionalidades
+Catálogo de Produtos: Exibe uma lista de produtos com imagens, descrições e preços.
+Página de Detalhes do Produto: Mostra informações detalhadas sobre o produto selecionado.
+Carrinho de Compras: Permite adicionar, remover e atualizar a quantidade de produtos.
+Simulação de Checkout: Exibe o resumo do pedido e as opções de pagamento.
+Responsividade: Layout ajustado para diferentes tamanhos de tela, proporcionando uma boa experiência em dispositivos móveis e desktops.
+🛠️ Tecnologias Utilizadas
+React: Biblioteca JavaScript para construção de interfaces de usuário baseadas em componentes.
+JavaScript (ES6+): Linguagem de programação usada para a lógica do site.
+Styled Components: Biblioteca para estilização de componentes com CSS-in-JS, permitindo a criação de componentes reutilizáveis e isolados.
+⚙️ Como Rodar o Projeto
+Pré-requisitos
+Certifique-se de ter o Node.js instalado na sua máquina. Você pode verificar se o Node está instalado com o seguinte comando:
 
-## Available Scripts
+node -v
 
-In the project directory, you can run:
+Passo a Passo
+Clone este repositório para sua máquina local:
+git clone https://github.com/vLecaBR/sales-website-model
 
-### `npm start`
+Navegue até a pasta do projeto:
+cd ecommerce-site-modelo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instale as dependências:
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Inicie o servidor de desenvolvimento:
+npm start
 
-### `npm test`
+O projeto será aberto em http://localhost:3000 no seu navegador.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🖌️ Estilização com Styled Components
+A estilização do site foi realizada com Styled Components, permitindo o uso de CSS diretamente nos arquivos JavaScript, garantindo modularidade e evitando conflitos de estilo. Cada componente possui seu próprio estilo encapsulado, o que facilita a manutenção e expansão do projeto.
 
-### `npm run build`
+💡 Possíveis Melhorias Futuras
+Integração com API de pagamento: Para realizar transações reais.
+Sistema de Autenticação: Login de usuários e criação de contas.
+Filtragem de Produtos: Filtros por categoria, preço, entre outros.
+Avaliação de Produtos: Opção de os usuários deixarem avaliações e comentários nos produtos.
+🖥️ Demonstração
+Ainda não disponível, mas em breve será implementado um link para uma demonstração ao vivo do projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📬 Contato
+Caso tenha dúvidas ou sugestões sobre este projeto, sinta-se à vontade para entrar em contato:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Email: vitartasleca@gmail.com
+LinkedIn: [Linkedin](https://www.linkedin.com/in/victor-leca-vlkbr/)
+Nota: Este projeto foi desenvolvido com fins educacionais e como parte do meu portfólio pessoal. Não há funcionalidades de pagamento real ou processamento de pedidos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Licença
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Espero que este projeto ajude a demonstrar minhas habilidades e que seja útil para quem estiver buscando inspiração para construir seu próprio site de e-commerce!
