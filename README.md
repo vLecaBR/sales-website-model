@@ -6,11 +6,11 @@ Catálogo de Produtos: Exibe uma lista de produtos com imagens, descrições e p
 Página de Detalhes do Produto: Mostra informações detalhadas sobre o produto selecionado.
 Carrinho de Compras: Permite adicionar, remover e atualizar a quantidade de produtos.
 Simulação de Checkout: Exibe o resumo do pedido e as opções de pagamento.
-Responsividade: Layout ajustado para diferentes tamanhos de tela, proporcionando uma boa experiência em dispositivos móveis e desktops.
+Responsividade: Layout ajustado para diferentes tamanhos de tela, proporcionando uma boa experiência em dispositivos móveis e desktops. <br>
 🛠️ Tecnologias Utilizadas
 React: Biblioteca JavaScript para construção de interfaces de usuário baseadas em componentes.
 JavaScript (ES6+): Linguagem de programação usada para a lógica do site.
-Styled Components: Biblioteca para estilização de componentes com CSS-in-JS, permitindo a criação de componentes reutilizáveis e isolados.
+Styled Components: Biblioteca para estilização de componentes com CSS-in-JS, permitindo a criação de componentes reutilizáveis e isolados. <br>
 ⚙️ Como Rodar o Projeto
 Pré-requisitos
 Certifique-se de ter o Node.js instalado na sua máquina. Você pode verificar se o Node está instalado com o seguinte comando:<br>
