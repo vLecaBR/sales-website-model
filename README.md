@@ -43,13 +43,13 @@ Avaliação de Produtos: Opção de os usuários deixarem avaliações e coment�
 Ainda não disponível, mas em breve será implementado um link para uma demonstração ao vivo do projeto.
 
 📬 Contato
-Caso tenha dúvidas ou sugestões sobre este projeto, sinta-se à vontade para entrar em contato:
+Caso tenha dúvidas ou sugestões sobre este projeto, sinta-se à vontade para entrar em contato:<br>
 
-Email: vitartasleca@gmail.com
-LinkedIn: [Linkedin](https://www.linkedin.com/in/victor-leca-vlkbr/)
+Email: vitartasleca@gmail.com <br>
+LinkedIn: [Linkedin](https://www.linkedin.com/in/victor-leca-vlkbr/) <br>
 Nota: Este projeto foi desenvolvido com fins educacionais e como parte do meu portfólio pessoal. Não há funcionalidades de pagamento real ou processamento de pedidos.
 
-Licença
-Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
+Licença <br>
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes. <br>
 
-Espero que este projeto ajude a demonstrar minhas habilidades e que seja útil para quem estiver buscando inspiração para construir seu próprio site de e-commerce!
+Espero que este projeto ajude a demonstrar minhas habilidades e que seja útil para quem estiver buscando inspiração para construir seu próprio site de e-commerce! 
