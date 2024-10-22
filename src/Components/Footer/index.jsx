@@ -1,81 +1,10 @@
-// Footer.js
 import React from 'react';
-import styled from 'styled-components';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import {
+  FooterContainer, FooterContent, FooterSection, SectionTitle, FooterLink,
+  SocialIcons, SocialIcon, Copyright
+} from './Footer.styles';  // Importação dos estilos
 
-// Styled components
-const FooterContainer = styled.footer`
-  background-color: #8445FF;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-    padding: 40px 80px;
-  }
-`;
-
-const FooterContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
-
-const FooterSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const SectionTitle = styled.h4`
-  font-size: 18px;
-  margin-bottom: 10px;
-`;
-
-const FooterLink = styled.a`
-  color: #E1E2EF;
-  text-decoration: none;
-  font-size: 16px;
-
-  &:hover {
-    color: #A2FA28;
-  }
-`;
-
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 15px;
-  
-  &:hover {
-    color: #A2FA28;
-  }
-`;
-
-const SocialIcon = styled.a`
-  color: #E1E2EF;
-  font-size: 24px;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #A2FA28;
-  }
-`;
-
-const Copyright = styled.p`
-  font-size: 14px;
-  color: #5F9F04;
-  margin-top: 20px;
-  
-`;
-
-// Componente principal
 const Footer = () => {
   return (
     <FooterContainer>
@@ -101,10 +30,10 @@ const Footer = () => {
           <SectionTitle>Redes</SectionTitle>
           <SocialIcons>
             <SocialIcon href="#" target="_blank">
-            <FaInstagram />
+              <FaInstagram />
             </SocialIcon>
             <SocialIcon href="#" target="_blank">
-            <FaWhatsapp />
+              <FaWhatsapp />
             </SocialIcon>
           </SocialIcons>
         </FooterSection>
