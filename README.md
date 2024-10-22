@@ -1,4 +1,4 @@
-sales-website-model - Portfolio Project
+sales-website-model - Portfolio Project <br>
 Este repositório contém o código-fonte de um site de vendas modelo, desenvolvido como parte do meu portfólio pessoal. O projeto foi construído usando React, JavaScript, e Styled Components, com o objetivo de demonstrar minhas habilidades em desenvolvimento front-end e construção de interfaces de usuário modernas.
 
 📋 Funcionalidades
