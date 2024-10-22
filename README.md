@@ -13,21 +13,20 @@ JavaScript (ES6+): Linguagem de programação usada para a lógica do site.
 Styled Components: Biblioteca para estilização de componentes com CSS-in-JS, permitindo a criação de componentes reutilizáveis e isolados.
 ⚙️ Como Rodar o Projeto
 Pré-requisitos
-Certifique-se de ter o Node.js instalado na sua máquina. Você pode verificar se o Node está instalado com o seguinte comando:
-
+Certifique-se de ter o Node.js instalado na sua máquina. Você pode verificar se o Node está instalado com o seguinte comando:<br>
 node -v
 
 Passo a Passo
 Clone este repositório para sua máquina local:
 git clone https://github.com/vLecaBR/sales-website-model
 
-Navegue até a pasta do projeto:
+Navegue até a pasta do projeto:<br>
 cd ecommerce-site-modelo
 
-Instale as dependências:
+Instale as dependências:<br>
 npm install
 
-Inicie o servidor de desenvolvimento:
+Inicie o servidor de desenvolvimento:<br>
 npm start
 
 O projeto será aberto em http://localhost:3000 no seu navegador.
