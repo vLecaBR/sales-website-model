@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
@@ -44,10 +43,10 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
 
-        <main style={{ padding: '20px' }}>
+        <main style={{ padding: '20px', flexGrow: 1, marginBottom: '200px' }}>
           <Routes>
             {/* Rota para a página inicial */}
             <Route

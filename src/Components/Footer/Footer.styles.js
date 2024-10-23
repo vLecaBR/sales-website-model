@@ -6,12 +6,15 @@ export const FooterContainer = styled.footer`
   color: #fff;
   padding: 40px 20px;
   text-align: center;
-
+  max-height: 300px; /* Limite de altura do footer */
+  overflow: hidden;   /* Se o conteúdo for maior, parte dele será escondida */
+  
   @media (min-width: 768px) {
     text-align: left;
     padding: 40px 80px;
   }
 `;
+
 
 // Conteúdo do Footer
 export const FooterContent = styled.div`
