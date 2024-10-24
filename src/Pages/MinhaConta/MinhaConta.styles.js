@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   text-align: center;
-  color: #333; /* Cor do texto */
+  color: #666; /* Cor do texto */
 `;
 
 export const Section = styled.div`

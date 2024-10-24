@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom'; // Importar BrowserRouter e outros hooks
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProductCard from './Components/ProductCard';
@@ -8,10 +8,13 @@ import ProductPage from './Pages/Product'; // Importe a página de Produto
 import Login from './Pages/Login'; // Importe a página de Login
 import Cadastro from './Pages/Cadastro'; // Importe a página de Cadastro
 import MinhaConta from './Pages/MinhaConta'; // Importe a nova página de Minha Conta
+import ConfiguracoesConta from './Pages/ConfiguracoesConta'; // Importe a nova página de Configurações
 
 function App() {
   const [cartItems, setCartItems] = useState([]); // Estado do carrinho
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticação
+  const location = useLocation(); // Hook para obter a localização atual
+  const navigate = useNavigate(); // Hook para navegação
 
   const products = [
     {
@@ -46,65 +49,82 @@ function App() {
   // Verifica a autenticação ao carregar o aplicativo
   useEffect(() => {
     const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token); // Atualiza o estado com base na presença do token
-  }, []);
+    if (token) {
+      setIsAuthenticated(true); // Atualiza o estado com base na presença do token
+      const lastPath = sessionStorage.getItem('lastPath');
+      if (lastPath) {
+        navigate(lastPath); // Navega para a última página visitada se houver token
+      }
+    } else {
+      setIsAuthenticated(false); // Caso contrário, desautentica
+    }
+  }, [navigate]); // Adiciona navigate como dependência
+
+  // Armazena a última rota visitada
+  useEffect(() => {
+    sessionStorage.setItem('lastPath', location.pathname); 
+  }, [location]);
 
   return (
-    <Router>
-      <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header />
+    <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Header />
 
-        <main style={{ padding: '20px', flexGrow: 1, marginBottom: '200px' }}>
-          <Routes>
-            {/* Rota para a página inicial */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <h1 style={{ textAlign: 'center', margin: '20px 0' }}>Nossos Produtos</h1>
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                      gap: '20px',
-                      justifyItems: 'center',
-                      marginTop: '50px',
-                    }}
-                  >
-                    {products.map((product) => (
-                      <ProductCard key={product.id} product={product} setCartItems={setCartItems} />
-                    ))}
-                  </div>
-                </>
-              }
-            />
+      <main style={{ padding: '20px', flexGrow: 1, marginBottom: '200px' }}>
+        <Routes>
+          {/* Rota para a página inicial */}
+          <Route
+            path="/"
+            element={
+              <>
+                <h1 style={{ textAlign: 'center', margin: '20px 0' }}>Nossos Produtos</h1>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '20px',
+                    justifyItems: 'center',
+                    marginTop: '50px',
+                  }}
+                >
+                  {products.map((product) => (
+                    <ProductCard key={product.id} product={product} setCartItems={setCartItems} />
+                  ))}
+                </div>
+              </>
+            }
+          />
 
-            {/* Rota para a página de carrinho */}
-            <Route
-              path="/cart"
-              element={isAuthenticated ? <Cart cartItems={cartItems} setCartItems={setCartItems} /> : <Navigate to="/login" />}
-            />
+          {/* Rota para a página de carrinho */}
+          <Route
+            path="/cart"
+            element={isAuthenticated ? <Cart cartItems={cartItems} setCartItems={setCartItems} /> : <Navigate to="/login" />}
+          />
 
-            {/* Rota dinâmica para a página de produto individual */}
-            <Route path="/produto/:id" element={<ProductPage products={products} />} />
+          {/* Rota dinâmica para a página de produto individual */}
+          <Route path="/produto/:id" element={<ProductPage products={products} />} />
 
-            {/* Rota para a página de login */}
-            <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+          {/* Rota para a página de login */}
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
-            {/* Rota para a página de cadastro */}
-            <Route path="/Cadastro" element={<Cadastro />} />
+          {/* Rota para a página de cadastro */}
+          <Route path="/cadastro" element={<Cadastro />} />
 
-            {/* Rota para a página de Minha Conta */}
-            <Route
-              path="/minha-conta"
-              element={isAuthenticated ? <MinhaConta /> : <Navigate to="/login" />}
-            />
-          </Routes>
-        </main>
+          {/* Rota para a página de Minha Conta */}
+          <Route
+            path="/minha-conta"
+            element={isAuthenticated ? <MinhaConta /> : <Navigate to="/login" />}
+          />
 
-        <Footer />
-      </div>
-    </Router>
+          {/* Rota para a página de Configurações da Conta */}
+          <Route
+            path="/settings"
+            element={isAuthenticated ? <ConfiguracoesConta /> : <Navigate to="/login" />}
+          />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
