@@ -1,4 +1,4 @@
-// src/Pages/Login.jsx
+// src/Pages/Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -23,30 +23,17 @@ export default function Login({ setIsAuthenticated }) {
         email,
         password,
       });
-
-      // Verifica se a resposta contém os dados necessários
-      if (response.data.token && response.data.user) {
-        // Armazenar token e informações do usuário
-        localStorage.setItem('token', response.data.token); // Armazena o token
-        localStorage.setItem('user', JSON.stringify({ 
-          name: response.data.user.name, 
-          email: response.data.user.email 
-        }));
-
-        setIsAuthenticated(true); // Atualiza o estado de autenticação
-        alert('Login bem-sucedido!');
-        navigate('/'); // Redirecionar para a página principal
-      } else {
-        setError('Resposta inválida do servidor.'); // Caso a estrutura não seja a esperada
-      }
+      localStorage.setItem('token', response.data.token); // Armazena o token
+      localStorage.setItem('user', JSON.stringify({ // Armazena os dados do usuário
+        id: response.data.user.id,
+        name: response.data.user.name,
+        email: response.data.user.email,
+      }));
+      setIsAuthenticated(true); // Atualiza o estado de autenticação
+      alert('Login bem-sucedido!');
+      navigate('/'); // Redirecionar para a página principal
     } catch (err) {
-      console.error(err); // Loga o erro no console
-      if (err.response) {
-        // Se a API retornar um erro
-        setError(err.response.data.message || 'Credenciais inválidas'); // Exibe mensagem específica
-      } else {
-        setError('Erro de rede. Tente novamente.'); // Mensagem genérica para falhas de rede
-      }
+      setError('Credenciais inválidas');
     }
   };
 

@@ -8,6 +8,7 @@ export const Container = styled.div`
   background-color: #f9f9f9; /* Cor de fundo suave */
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5vh;
 `;
 
 export const Title = styled.h1`
@@ -25,7 +26,7 @@ export const Section = styled.div`
 
 export const SectionTitle = styled.h2`
   margin-bottom: 10px;
-  color: #007bff; /* Cor do título */
+  color: #8445FF; /* Cor do título */
 `;
 
 export const Button = styled.button`
@@ -33,12 +34,12 @@ export const Button = styled.button`
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff; /* Cor do botão */
+  background-color: #8445FF; /* Cor do botão */
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+    background-color: #6B32CC;
   }
 `;
