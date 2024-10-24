@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Importando o axios para requisições
+import axios from 'axios';
 import {
   LoginContainer,
   LoginForm,
@@ -12,23 +12,21 @@ import {
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // Para gerenciar erros
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      // Fazendo a requisição ao backend
-      const response = await axios.post('/api/login', { email, password });
-
-      // Salvar o token em localStorage
-      localStorage.setItem('token', response.data.token);
-
+      const response = await axios.post('http://localhost:5000/api/login', {
+        email,
+        password,
+      });
+      localStorage.setItem('token', response.data.token); // Armazena o token
       alert('Login bem-sucedido!');
-      navigate('/'); // Redirecionar para a página principal após o login
+      navigate('/'); // Redirecionar para a página principal
     } catch (err) {
-      setError('Credenciais inválidas'); // Define a mensagem de erro
+      setError('Credenciais inválidas'); // Atualiza a mensagem de erro
     }
   };
 
@@ -36,7 +34,7 @@ export default function Login() {
     <LoginContainer>
       <LoginForm onSubmit={handleSubmit}>
         <h2 style={{ color: '#8445FF' }}>Login</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Mensagem de erro */}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <Input
           type="email"
           placeholder="Email"

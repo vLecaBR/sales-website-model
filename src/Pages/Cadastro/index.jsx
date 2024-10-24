@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Importando o axios para fazer requisições
+import axios from 'axios';
 import {
   CadastroContainer,
   CadastroForm,
@@ -14,29 +14,25 @@ export default function Cadastro() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(''); // Para gerenciar erros
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (password !== confirmPassword) {
       alert('As senhas não coincidem');
       return;
     }
-
     try {
-      // Fazendo a requisição ao backend para cadastro
-      const response = await axios.post('/api/cadastro', {
+      await axios.post('http://localhost:5000/api/cadastro', {
         name,
         email,
-        password
+        password,
       });
-
       alert('Cadastro bem-sucedido!');
-      navigate('/login'); // Redirecionar para a página de login após o cadastro
+      navigate('/login');
     } catch (err) {
-      setError('Erro ao cadastrar. Tente novamente.'); // Define a mensagem de erro
+      setError('Erro ao cadastrar. Tente novamente.'); // Mensagem de erro
     }
   };
 
@@ -44,7 +40,7 @@ export default function Cadastro() {
     <CadastroContainer>
       <CadastroForm onSubmit={handleSubmit}>
         <h2 style={{ color: '#8445FF' }}>Cadastro</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Mensagem de erro */}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <Input
           type="text"
           placeholder="Nome"
