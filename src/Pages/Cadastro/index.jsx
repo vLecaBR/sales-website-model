@@ -32,7 +32,7 @@ export default function Cadastro() {
       alert('Cadastro bem-sucedido!');
       navigate('/login');
     } catch (err) {
-      setError('Erro ao cadastrar. Tente novamente.'); // Mensagem de erro
+      setError(err.response?.data?.message || 'Erro ao cadastrar. Tente novamente.'); // Mensagem de erro melhorada
     }
   };
 

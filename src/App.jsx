@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProductCard from './Components/ProductCard';
@@ -7,9 +7,11 @@ import Cart from './Pages/CART'; // Importe a página de Carrinho
 import ProductPage from './Pages/Product'; // Importe a página de Produto
 import Login from './Pages/Login'; // Importe a página de Login
 import Cadastro from './Pages/Cadastro'; // Importe a página de Cadastro
+import MinhaConta from './Pages/MinhaConta'; // Importe a nova página de Minha Conta
 
 function App() {
   const [cartItems, setCartItems] = useState([]); // Estado do carrinho
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticação
 
   const products = [
     {
@@ -40,6 +42,12 @@ function App() {
       description: 'Um smartphone revolucionário com tecnologia de ponta.',
     }
   ];
+
+  // Verifica a autenticação ao carregar o aplicativo
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setIsAuthenticated(!!token); // Atualiza o estado com base na presença do token
+  }, []);
 
   return (
     <Router>
@@ -72,16 +80,25 @@ function App() {
             />
 
             {/* Rota para a página de carrinho */}
-            <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+            <Route
+              path="/cart"
+              element={isAuthenticated ? <Cart cartItems={cartItems} setCartItems={setCartItems} /> : <Navigate to="/login" />}
+            />
 
             {/* Rota dinâmica para a página de produto individual */}
             <Route path="/produto/:id" element={<ProductPage products={products} />} />
 
             {/* Rota para a página de login */}
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
             {/* Rota para a página de cadastro */}
             <Route path="/Cadastro" element={<Cadastro />} />
+
+            {/* Rota para a página de Minha Conta */}
+            <Route
+              path="/minha-conta"
+              element={isAuthenticated ? <MinhaConta /> : <Navigate to="/login" />}
+            />
           </Routes>
         </main>
 
