@@ -4,7 +4,7 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh;;
 
   @media (max-width: 768px) { /* Tablets e celulares */
     padding: 1rem;
@@ -14,7 +14,7 @@ export const LoginContainer = styled.div`
 
   @media (max-width: 480px) { /* Celulares */
     padding: 0.5rem;
-    margin-top: 3vh;
+    margin-top: 5vh;
   }
 `;
 
@@ -45,6 +45,7 @@ export const Input = styled.input`
   @media (max-width: 480px) { /* Celulares */
     font-size: 0.9rem;
     padding: 0.65rem;
+    width: 90%
   }
 `;
 

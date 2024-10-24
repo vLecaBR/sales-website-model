@@ -5,6 +5,12 @@ export const CadastroContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 0 1rem; /* Adiciona um padding horizontal em telas menores */
+
+  @media (max-width: 768px) {
+    height: auto; /* Altura automática para telas menores */
+    margin-top: 5vh; /* Margem superior para telas menores */
+  }
 `;
 
 export const CadastroForm = styled.form`
@@ -12,8 +18,13 @@ export const CadastroForm = styled.form`
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%; /* Faz o formulário ocupar 100% da largura do container */
+  max-width: 400px; /* Limita a largura máxima para evitar que fique muito largo */
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem; /* Reduz o padding em telas menores */
+  }
 `;
 
 export const Input = styled.input`
@@ -24,6 +35,12 @@ export const Input = styled.input`
   border-radius: 4px;
   font-size: 1rem;
   color: #333;
+
+  @media (max-width: 768px) {
+    padding: 0.6rem; /* Reduz o padding em telas menores */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+    width: 90%; /* Ajusta a largura do input */
+  }
 `;
 
 export const Button = styled.button`
@@ -39,6 +56,11 @@ export const Button = styled.button`
   &:hover {
     background-color: #6B32CC; /* Sombra roxa ao passar o mouse */
   }
+
+  @media (max-width: 768px) {
+    padding: 0.6rem; /* Reduz o padding em telas menores */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+  }
 `;
 
 export const RedirectLink = styled.p`
@@ -53,5 +75,9 @@ export const RedirectLink = styled.p`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem; /* Ajusta o tamanho da fonte do link */
   }
 `;

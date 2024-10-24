@@ -30,7 +30,6 @@ export default function CartPage({ cartItems, setCartItems }) {
 
   return (
     <div>
-      <Header title="Carrinho" />
 
       <CartContainer>
         {cartItems.length === 0 ? (
