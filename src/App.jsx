@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom'; // Importar BrowserRouter e outros hooks
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom'; // Importar useLocation e useNavigate
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProductCard from './Components/ProductCard';
@@ -58,7 +58,7 @@ function App() {
     } else {
       setIsAuthenticated(false); // Caso contrário, desautentica
     }
-  }, [navigate]); // Adiciona navigate como dependência
+  }, []);
 
   // Armazena a última rota visitada
   useEffect(() => {
