@@ -21,7 +21,7 @@ Clone este repositório para sua máquina local:
 git clone https://github.com/vLecaBR/sales-website-model
 
 Navegue até a pasta do projeto:<br>
-cd ecommerce-site-modelo
+cd sales-website-model
 
 Instale as dependências:<br>
 npm install
