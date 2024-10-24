@@ -5,6 +5,17 @@ export const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  @media (max-width: 768px) { /* Tablets e celulares */
+    padding: 1rem;
+    height: auto;
+    margin-top: 5vh;
+  }
+
+  @media (max-width: 480px) { /* Celulares */
+    padding: 0.5rem;
+    margin-top: 3vh;
+  }
 `;
 
 export const LoginForm = styled.form`
@@ -12,8 +23,14 @@ export const LoginForm = styled.form`
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 300px; /* Limite máximo para evitar estourar o layout */
   text-align: center;
+
+  @media (max-width: 480px) { /* Celulares */
+    padding: 1rem;
+    width: 90%; /* O formulário ocupará 90% da tela para evitar overflow */
+  }
 `;
 
 export const Input = styled.input`
@@ -24,6 +41,11 @@ export const Input = styled.input`
   border-radius: 4px;
   font-size: 1rem;
   color: #333;
+
+  @media (max-width: 480px) { /* Celulares */
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -39,6 +61,11 @@ export const Button = styled.button`
   &:hover {
     background-color: #6B32CC;
   }
+
+  @media (max-width: 480px) { /* Celulares */
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
 `;
 
 export const RedirectLink = styled.p`
@@ -53,5 +80,9 @@ export const RedirectLink = styled.p`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @media (max-width: 480px) { /* Celulares */
+    font-size: 0.85rem;
   }
 `;
