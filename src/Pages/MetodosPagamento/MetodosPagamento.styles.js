@@ -5,6 +5,7 @@ export const PageContainer = styled.div`
   padding: 20px;
   max-width: 600px;
   margin: auto;
+  margin-top: 5vh;
 `;
 
 export const Title = styled.h1`
@@ -29,7 +30,7 @@ export const CardItem = styled.div`
 
 export const CardIcon = styled.div`
   font-size: 1.5rem;
-  color: #ff6f00;
+  color: #A2FA28;
   margin-right: 15px;
 `;
 
@@ -46,7 +47,7 @@ export const CardDetails = styled.div`
 
 export const CardActions = styled.div`
   font-size: 1.2rem;
-  color: #ff6f00;
+  color: #aa0000;
   cursor: pointer;
 `;
 
@@ -56,7 +57,7 @@ export const AddCardButton = styled.button`
   justify-content: center;
   width: 100%;
   padding: 10px;
-  background-color: #ff6f00;
+  background-color: #8445FF;
   color: #fff;
   border: none;
   border-radius: 8px;

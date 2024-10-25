@@ -41,7 +41,7 @@ const MinhaConta = () => {
 
       <Section>
         <SectionTitle>Métodos de Pagamento</SectionTitle>
-        <Button onClick={() => navigate('/payment-methods')}>Gerenciar Métodos de Pagamento</Button>
+        <Button onClick={() => navigate('/metodos-pagamento')}>Gerenciar Métodos de Pagamento</Button>
       </Section>
 
       <Section>

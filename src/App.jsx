@@ -11,6 +11,7 @@ import Cadastro from './Pages/Cadastro';
 import MinhaConta from './Pages/MinhaConta';
 import ConfiguracoesConta from './Pages/ConfiguracoesConta';
 import MinhasCompras from './Pages/MinhasCompras'; // Importe a nova página
+import MetodosPagamento from './Pages/MetodosPagamento'; // Importe a página de métodos de pagamento
 import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles';
 
 function App() {
@@ -107,10 +108,14 @@ function App() {
             element={isAuthenticated ? <ConfiguracoesConta /> : <Navigate to="/login" />}
           />
 
-          {/* Adicionando a rota protegida para "Minhas Compras" */}
           <Route
             path="/minhas-compras"
             element={isAuthenticated ? <MinhasCompras /> : <Navigate to="/login" />}
+          />
+
+          <Route
+            path="/metodos-pagamento"
+            element={isAuthenticated ? <MetodosPagamento /> : <Navigate to="/login" />}
           />
         </Routes>
       </MainContainer>
