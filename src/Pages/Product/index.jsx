@@ -1,4 +1,5 @@
-import React from 'react';
+// src/Pages/ProductPage.jsx
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   ProductPageContainer,
@@ -8,16 +9,33 @@ import {
   ProductTitle,
   ProductPrice,
   ProductDescription,
-  BuyButton
+  BuyButton,
+  QuantityControl,
+  FreightCalculator,
+  FreightButton,
+  BoxContent,
+  BoxContentTitle,
+  BoxContentList
 } from './ProductPage.styles';
 
 const ProductPage = ({ products }) => {
   const { id } = useParams(); // Captura o ID da URL
   const product = products.find((product) => product.id === parseInt(id));
 
+  // Estados para quantidade e cálculo do frete
+  const [quantity, setQuantity] = useState(1);
+  const [cep, setCep] = useState('');
+  const [freightCost, setFreightCost] = useState(null);
+
   if (!product) {
     return <h1>Produto não encontrado</h1>;
   }
+
+  const calculateFreight = () => {
+    // Lógica simulada para cálculo do frete
+    const simulatedFreightCost = cep ? (parseInt(cep) % 1000) : 0; // Simulação de frete baseado no CEP
+    setFreightCost(simulatedFreightCost);
+  };
 
   return (
     <ProductPageContainer>
@@ -25,11 +43,41 @@ const ProductPage = ({ products }) => {
         <ProductImage src={product.image} alt={product.name} />
         <ProductDetails>
           <ProductTitle>{product.name}</ProductTitle>
-          <ProductPrice>R$ {product.priceCash}</ProductPrice>
-          <ProductDescription>{product.description}</ProductDescription>
+          <ProductPrice>R$ {product.priceCash.toFixed(2)}</ProductPrice>
+          
+          <QuantityControl>
+            <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+          </QuantityControl>
+          
+          <FreightCalculator>
+            <input 
+              type="text" 
+              value={cep} 
+              onChange={(e) => setCep(e.target.value)} 
+              placeholder="Digite seu CEP" 
+            />
+            <FreightButton onClick={calculateFreight}>Calcular Frete</FreightButton>
+            {freightCost !== null && (
+              <p className="freight-cost">Frete: R$ {freightCost.toFixed(2)}</p>
+            )}
+          </FreightCalculator>
+          
           <BuyButton>Adicionar ao Carrinho</BuyButton>
         </ProductDetails>
       </ProductContainer>
+
+      <ProductDescription>{product.description}</ProductDescription>
+
+      <BoxContent>
+        <BoxContentTitle>Conteúdo da Caixa</BoxContentTitle>
+        <BoxContentList>
+          {product.conteudoCaixa.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </BoxContentList>
+      </BoxContent>
     </ProductPageContainer>
   );
 };

@@ -1,134 +1,166 @@
+// src/Pages/ProductPage.styles.js
 import styled from 'styled-components';
 
 export const ProductPageContainer = styled.div`
-  margin-top: 10vh;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  background-color: #F3F3F3;
-
-  @media (max-width: 768px) { /* Tablets e celulares */
-    padding: 1rem;
-  }
-
-  @media (max-width: 480px) { /* Celulares */
-    padding: 0.5rem;
-  }
+  padding: 40px 20px;
+  background-color: #f5f5f5; /* Fundo suave para a página */
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px; /* Largura máxima para melhor visualização */
+  margin: 0 auto; /* Centralizar a página */
+  margin-top: 10vh; /* Espaçamento superior */
 `;
 
 export const ProductContainer = styled.div`
   display: flex;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  width: 50%;
-  max-width: 1200px;
+  margin-bottom: 30px;
+  background-color: #ffffff; /* Fundo branco para o produto */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  overflow: hidden;
+  transition: box-shadow 0.3s;
 
-  @media (max-width: 1024px) { /* Notebooks e tablets */
-    width: 70%;
-  }
-
-  @media (max-width: 768px) { /* Tablets */
-    flex-direction: column;
-    width: 90%;
-  }
-
-  @media (max-width: 480px) { /* Celulares */
-    padding: 1rem;
-    width: 100%;
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra ao passar o mouse */
   }
 `;
 
 export const ProductImage = styled.img`
-  width: 30%;
+  width: 300px;
   height: auto;
-  border-radius: 10px;
-  margin-right: 2rem;
-
-  @media (max-width: 768px) { /* Tablets */
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 480px) { /* Celulares */
-    width: 100%;
-  }
+  object-fit: cover; /* Ajuste da imagem */
 `;
 
 export const ProductDetails = styled.div`
+  padding: 20px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @media (max-width: 768px) { /* Tablets e celulares */
-    text-align: center;
-  }
 `;
 
-export const ProductTitle = styled.h1`
-  font-size: 2rem;
+export const ProductTitle = styled.h2`
+  font-size: 1.8rem;
   color: #333;
-
-  @media (max-width: 768px) { /* Tablets */
-    font-size: 1.75rem;
-  }
-
-  @media (max-width: 480px) { /* Celulares */
-    font-size: 1.5rem;
-  }
+  margin: 0;
 `;
 
 export const ProductPrice = styled.p`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #8445FF;
-
-  @media (max-width: 768px) { /* Tablets */
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: 480px) { /* Celulares */
-    font-size: 1.1rem;
-  }
+  font-size: 1.6rem;
+  color: #e63946; /* Vermelho para o preço */
+  margin: 10px 0;
 `;
 
 export const ProductDescription = styled.p`
-  margin-top: 1rem;
-  color: #666;
+  margin-top: 20px;
   font-size: 1rem;
-
-  @media (max-width: 768px) { /* Tablets */
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 480px) { /* Celulares */
-    font-size: 0.85rem;
-  }
+  line-height: 1.6;
+  color: #666;
+  border-top: 1px solid #ddd; /* Linha separadora */
+  padding-top: 20px; /* Espaçamento acima */
 `;
 
 export const BuyButton = styled.button`
-  background-color: #28A745;
-  color: #fff;
-  padding: 0.75rem 2rem;
+  background-color: #00b300; /* Verde para o botão */
+  color: white;
   border: none;
-  border-radius: 30px;
-  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 2rem;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.2s;
 
   &:hover {
-    background-color: #6b32cc;
+    background-color: #009700;
+    transform: translateY(-2px); /* Sutil elevação ao passar o mouse */
+  }
+`;
+
+export const QuantityControl = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+
+  button {
+    border: none;
+    background-color: #007bff; /* Azul para os botões de quantidade */
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
   }
 
-  @media (max-width: 768px) { /* Tablets */
-    padding: 0.65rem 1.75rem;
-    font-size: 0.9rem;
+  span {
+    margin: 0 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
+`;
 
-  @media (max-width: 480px) { /* Celulares */
-    padding: 0.5rem 1.5rem;
-    font-size: 0.85rem;
+export const FreightCalculator = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex: 1;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #007bff; /* Azul ao focar */
+      outline: none; /* Remover contorno padrão */
+    }
   }
+`;
+
+export const FreightButton = styled.button`
+  background-color: #28a745; /* Verde para calcular frete */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #218838;
+  }
+`;
+
+export const BoxContent = styled.div`
+  margin-top: 30px;
+  background-color: #ffffff; /* Fundo branco para conteúdo */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+`;
+
+export const BoxContentTitle = styled.h3`
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Tamanho da fonte */
+  color: #333;
+`;
+
+export const BoxContentList = styled.ul`
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #666; /* Cor mais clara para itens */
+
+  li {
+    margin: 5px 0; /* Espaçamento entre itens */
+  }
+`;
+
+export const FreightCost = styled.p`
+  margin-top: 10px;
+  font-weight: bold;
+  color: #e63946; /* Vermelho para o custo do frete */
 `;

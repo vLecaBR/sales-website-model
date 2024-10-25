@@ -29,6 +29,7 @@ function App() {
       installments: 10,
       priceInstallment: 1200,
       description: 'Um smartphone revolucionário com tecnologia de ponta.',
+      conteudoCaixa: ['1x iPhone 16', '1x Cabo USB-C'],
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ function App() {
       installments: 10,
       priceInstallment: 600,
       description: 'Um smartphone com uma das melhores câmeras do mercado.',
+      conteudoCaixa: ['1x Samsung Galaxy 23 Ultra', '1x Carregador', '1x Fone de Ouvido'],
     },
     {
       id: 3,
@@ -47,6 +49,7 @@ function App() {
       installments: 10,
       priceInstallment: 1400,
       description: 'Um smartphone revolucionário com tecnologia de ponta.',
+      conteudoCaixa: ['1x iPhone 15 Pro Max', '1x cabo USB-C'],
     }
   ];
 
