@@ -86,7 +86,7 @@ export default function Header() {
               Minhas Compras
             </SidebarItem>
 
-            <SidebarItem as={Link} to="/coupons" onClick={toggleMenu}>
+            <SidebarItem as={Link} to="/cupons" onClick={toggleMenu}>
               <SidebarIcon>
                 <FiTag />
               </SidebarIcon>
