@@ -29,9 +29,22 @@ const MinhasCompras = () => {
     setSelectedOrder(null);
   };
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'preparacao':
+        return 'blue';
+      case 'enviado':
+        return '#8445FF';
+      case 'entregue':
+        return '#80c520';
+      default:
+        return 'black';
+    }
+  };
+
   return (
     <PageContainer>
-      <Title>Minhas Compras</Title> {/* Usando o componente Title */}
+      <Title>Minhas Compras</Title>
 
       <TabsContainer>
         <TabButton active={activeTab === 'preparacao'} onClick={() => setActiveTab('preparacao')}>
@@ -52,7 +65,9 @@ const MinhasCompras = () => {
               <OrderImage src={order.image} alt={order.name} />
               <OrderDetails>
                 <h3>{order.name}</h3>
-                <OrderStatus>{activeTab === 'preparacao' ? 'Preparação' : activeTab === 'enviado' ? 'Enviado' : 'Entregue'}</OrderStatus>
+                <OrderStatus style={{ color: getStatusColor(order.status) }}>
+                  {activeTab === 'preparacao' ? 'Preparação' : activeTab === 'enviado' ? 'Enviado' : 'Entregue'}
+                </OrderStatus>
               </OrderDetails>
             </OrderItem>
           ))

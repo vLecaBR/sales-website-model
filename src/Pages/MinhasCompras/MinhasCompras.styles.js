@@ -1,10 +1,10 @@
 // src/Pages/MinhasCompras.styles.js
 import styled from 'styled-components';
 
-// Adicionando um componente Title para centralizar
+// Componente Title centralizado
 export const Title = styled.h1`
   text-align: center; /* Centraliza o texto */
-  margin-bottom: 20px; /* Espaçamento inferior para dar espaço para as abas */
+  margin-bottom: 20px; /* Espaçamento inferior */
   font-size: 2rem; /* Tamanho da fonte */
   color: #333; /* Cor do texto */
 `;
@@ -70,7 +70,6 @@ export const OrderDetails = styled.div`
 
 export const OrderStatus = styled.div`
   font-weight: bold;
-  color: #8445FF;
 `;
 
 export const ModalOverlay = styled.div`
