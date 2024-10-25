@@ -31,7 +31,7 @@ const MinhaConta = () => {
 
       <Section>
         <SectionTitle>Minhas Compras</SectionTitle>
-        <Button onClick={() => navigate('/purchases')}>Ver Compras</Button>
+        <Button onClick={() => navigate('/minhas-compras')}>Ver Compras</Button>
       </Section>
 
       <Section>
