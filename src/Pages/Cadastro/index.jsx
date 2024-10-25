@@ -24,7 +24,7 @@ export default function Cadastro() {
       return;
     }
     try {
-      await axios.post('http://localhost:5000/api/cadastro', {
+      await axios.post('http://localhost:5000/api/users/cadastro', {
         name,
         email,
         password,
@@ -32,7 +32,7 @@ export default function Cadastro() {
       alert('Cadastro bem-sucedido!');
       navigate('/login');
     } catch (err) {
-      setError(err.response?.data?.message || 'Erro ao cadastrar. Tente novamente.'); // Mensagem de erro melhorada
+      setError(err.response?.data?.message || 'Erro ao cadastrar. Tente novamente.');
     }
   };
 

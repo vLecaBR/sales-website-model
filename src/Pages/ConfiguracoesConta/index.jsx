@@ -1,4 +1,3 @@
-// src/Pages/ConfiguracoesConta/index.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Title, Button, Input } from './ConfiguracoesConta.styles'; // Importe os estilos que você vai criar
@@ -39,7 +38,7 @@ const ConfiguracoesConta = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch('http://localhost:5000/api/update', {
+      const response = await fetch('http://localhost:5000/api/users/update', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +50,7 @@ const ConfiguracoesConta = () => {
       const data = await response.json();
       if (response.ok) {
         setMessage(data.message);
-        localStorage.setItem('user', JSON.stringify({ ...user })); // Atualiza o localStorage
+        localStorage.setItem('user', JSON.stringify({ ...user, password: '' })); // Atualiza o localStorage sem salvar a senha
       } else {
         setMessage(data.message);
       }

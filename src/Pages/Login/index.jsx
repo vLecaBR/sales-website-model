@@ -19,21 +19,27 @@ export default function Login({ setIsAuthenticated }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/login', {
+      const response = await axios.post('http://localhost:5000/api/users/login', {
         email,
         password,
       });
-      localStorage.setItem('token', response.data.token); // Armazena o token
-      localStorage.setItem('user', JSON.stringify({ // Armazena os dados do usuário
+      // Armazena o token e os dados do usuário no localStorage
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify({
         id: response.data.user.id,
         name: response.data.user.name,
         email: response.data.user.email,
       }));
-      setIsAuthenticated(true); // Atualiza o estado de autenticação
+      setIsAuthenticated(true);
       alert('Login bem-sucedido!');
       navigate('/'); // Redirecionar para a página principal
     } catch (err) {
-      setError('Credenciais inválidas');
+      // Tratamento de erros com base na resposta do backend
+      if (err.response && err.response.status === 401) {
+        setError('Email ou senha inválidos.');
+      } else {
+        setError('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+      }
     }
   };
 
