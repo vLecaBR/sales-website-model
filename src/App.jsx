@@ -12,6 +12,7 @@ import MinhaConta from './Pages/MinhaConta';
 import ConfiguracoesConta from './Pages/ConfiguracoesConta';
 import MinhasCompras from './Pages/MinhasCompras'; // Importe a nova página
 import MetodosPagamento from './Pages/MetodosPagamento'; // Importe a página de métodos de pagamento
+import CouponsPage from './Pages/Cupons'; // Importe a nova página de cupons
 import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles';
 
 function App() {
@@ -119,6 +120,11 @@ function App() {
           <Route
             path="/metodos-pagamento"
             element={isAuthenticated ? <MetodosPagamento /> : <Navigate to="/login" />}
+          />
+
+          <Route
+            path="/cupons"
+            element={isAuthenticated ? <CouponsPage /> : <Navigate to="/login" />} // Nova rota para cupons
           />
         </Routes>
       </MainContainer>
