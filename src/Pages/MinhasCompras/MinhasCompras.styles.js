@@ -1,76 +1,79 @@
 // src/Pages/MinhasCompras.styles.js
 import styled from 'styled-components';
 
+// Adicionando um componente Title para centralizar
+export const Title = styled.h1`
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 20px; /* Espaçamento inferior para dar espaço para as abas */
+  font-size: 2rem; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+`;
+
 export const PageContainer = styled.div`
   padding: 20px;
-  max-width: 800px;
-  margin: auto;
+  background-color: #f8f9fa;
   margin-top: 5vh;
 `;
 
 export const TabsContainer = styled.div`
   display: flex;
-  gap: 20px;
   margin-bottom: 20px;
-  justify-content: center;
 `;
 
 export const TabButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  flex: 1;
+  padding: 10px;
   border: none;
-  background-color: ${({ active }) => (active ? '#8445FF' : '#f1f1f1')};
-  color: ${({ active }) => (active ? '#fff' : '#333')};
-  font-weight: ${({ active }) => (active ? 'bold' : 'normal')};
   border-radius: 5px;
+  background-color: ${props => (props.active ? '#8445FF' : '#e0e0e0')};
+  color: ${props => (props.active ? '#A2FA28' : '#000')};
   cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  svg {
-    font-size: 1.2rem;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #6B32CC;
+    color: white;
   }
 `;
 
 export const OrderList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
 `;
 
 export const OrderItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 15px;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const OrderImage = styled.img`
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
   margin-right: 15px;
 `;
 
 export const OrderDetails = styled.div`
   flex: 1;
-  h3 {
-    margin: 0;
-    font-size: 1.1rem;
-  }
 `;
 
-export const OrderStatus = styled.p`
-  color: #777;
-  font-size: 0.9rem;
-  margin-top: 5px;
+export const OrderStatus = styled.div`
+  font-weight: bold;
+  color: #8445FF;
 `;
 
-export const Modal = styled.div`
+export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -83,13 +86,26 @@ export const Modal = styled.div`
   z-index: 1000;
 `;
 
-export const ModalContent = styled.div`
+export const Modal = styled.div`
   background: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   max-width: 500px;
-  width: 100%;
+  width: 90%;
   position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -101,4 +117,8 @@ export const CloseButton = styled.button`
   font-size: 24px;
   cursor: pointer;
   color: #333;
+  transition: color 0.3s;
+  &:hover {
+    color: #ff4d4d;
+  }
 `;

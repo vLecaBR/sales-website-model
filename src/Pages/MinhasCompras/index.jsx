@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { FiPackage, FiTruck, FiCheckCircle } from 'react-icons/fi';
 import {
   PageContainer, TabsContainer, TabButton, OrderList, OrderItem, OrderImage, OrderDetails,
-  OrderStatus, Modal, ModalContent, CloseButton
+  OrderStatus, Modal, ModalContent, CloseButton, ModalOverlay, Title
 } from './MinhasCompras.styles.js';
 
 const MinhasCompras = () => {
   const [activeTab, setActiveTab] = useState('preparacao');
-  const [selectedOrder, setSelectedOrder] = useState(null); // Para armazenar o pedido selecionado
-  const [modalVisible, setModalVisible] = useState(false); // Para controlar a visibilidade do modal
+  const [selectedOrder, setSelectedOrder] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const pedidos = [
     { id: 1, name: 'Iphone 16', image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg', status: 'preparacao' },
@@ -31,7 +31,7 @@ const MinhasCompras = () => {
 
   return (
     <PageContainer>
-      <h1>Minhas Compras</h1>
+      <Title>Minhas Compras</Title> {/* Usando o componente Title */}
 
       <TabsContainer>
         <TabButton active={activeTab === 'preparacao'} onClick={() => setActiveTab('preparacao')}>
@@ -61,22 +61,21 @@ const MinhasCompras = () => {
         )}
       </OrderList>
 
-      {/* Modal para exibir detalhes do pedido */}
       {modalVisible && selectedOrder && (
-        <Modal>
-          <ModalContent>
+        <ModalOverlay>
+          <Modal>
             <CloseButton onClick={closeModal}>✖</CloseButton>
             <h2>{selectedOrder.name}</h2>
             <OrderImage src={selectedOrder.image} alt={selectedOrder.name} />
             <p>Status: {selectedOrder.status === 'enviado' ? 'Enviado' : selectedOrder.status === 'entregue' ? 'Entregue' : 'Em Preparação'}</p>
             {selectedOrder.status === 'enviado' && (
               <>
-                <p>Código de Rastreamento: {selectedOrder.trackingCode}</p>
-                <p>Localização: {selectedOrder.location}</p>
+                <p><strong>Código de Rastreamento:</strong> {selectedOrder.trackingCode}</p>
+                <p><strong>Localização:</strong> {selectedOrder.location}</p>
               </>
             )}
-          </ModalContent>
-        </Modal>
+          </Modal>
+        </ModalOverlay>
       )}
     </PageContainer>
   );
