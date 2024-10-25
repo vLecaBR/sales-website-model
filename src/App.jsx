@@ -1,7 +1,7 @@
 // App.jsx
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProductCard from './Components/ProductCard';
@@ -60,7 +60,7 @@ function App() {
     } else {
       setIsAuthenticated(false);
     }
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     sessionStorage.setItem('lastPath', location.pathname);
