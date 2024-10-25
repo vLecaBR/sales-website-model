@@ -1,5 +1,4 @@
 // App.jsx
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Header from './Components/Header';
@@ -11,7 +10,8 @@ import Login from './Pages/Login';
 import Cadastro from './Pages/Cadastro';
 import MinhaConta from './Pages/MinhaConta';
 import ConfiguracoesConta from './Pages/ConfiguracoesConta';
-import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles'; // Importando componentes estilizados
+import MinhasCompras from './Pages/MinhasCompras'; // Importe a nova página
+import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -60,7 +60,7 @@ function App() {
     } else {
       setIsAuthenticated(false);
     }
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     sessionStorage.setItem('lastPath', location.pathname);
@@ -105,6 +105,12 @@ function App() {
           <Route
             path="/settings"
             element={isAuthenticated ? <ConfiguracoesConta /> : <Navigate to="/login" />}
+          />
+
+          {/* Adicionando a rota protegida para "Minhas Compras" */}
+          <Route
+            path="/minhas-compras"
+            element={isAuthenticated ? <MinhasCompras /> : <Navigate to="/login" />}
           />
         </Routes>
       </MainContainer>
