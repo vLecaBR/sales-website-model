@@ -43,7 +43,9 @@ const ProductPage = ({ products }) => {
         <ProductImage src={product.image} alt={product.name} />
         <ProductDetails>
           <ProductTitle>{product.name}</ProductTitle>
-          <ProductPrice>R$ {product.priceCash.toFixed(2)}</ProductPrice>
+          <ProductPrice>
+            R$ {product.price ? product.price.toFixed(2) : '0.00'}
+          </ProductPrice>
           
           <QuantityControl>
             <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>

@@ -30,7 +30,7 @@ const ProductCard = ({ product, setCartItems }) => {
       <ProductName>{product.name}</ProductName>
       {/* Verifique se priceCash existe antes de usar toFixed */}
       <ProductPrice>
-        R$ {product.priceCash ? product.priceCash.toFixed(2) : '0.00'}
+        R$ {product.price ? product.price.toFixed(2) : '0.00'}
       </ProductPrice>
       <Link to={`/produto/${product.id}`}>
         <DetailButton>Ver Detalhes</DetailButton>
