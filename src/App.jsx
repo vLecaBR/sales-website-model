@@ -1,6 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProductCard from './Components/ProductCard';
@@ -10,49 +11,31 @@ import Login from './Pages/Login';
 import Cadastro from './Pages/Cadastro';
 import MinhaConta from './Pages/MinhaConta';
 import ConfiguracoesConta from './Pages/ConfiguracoesConta';
-import MinhasCompras from './Pages/MinhasCompras'; // Importe a nova página
-import MetodosPagamento from './Pages/MetodosPagamento'; // Importe a página de métodos de pagamento
-import CouponsPage from './Pages/Cupons'; // Importe a nova página de cupons
+import MinhasCompras from './Pages/MinhasCompras';
+import MetodosPagamento from './Pages/MetodosPagamento';
+import CouponsPage from './Pages/Cupons';
 import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [products, setProducts] = useState([]); // Estado para armazenar os produtos da API
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const products = [
-    {
-      id: 1,
-      name: 'Iphone 16',
-      image: 'https://m.media-amazon.com/images/I/51m8qUn-4tL._AC_SX679_.jpg',
-      priceCash: 7000,
-      installments: 10,
-      priceInstallment: 1200,
-      description: 'Um smartphone revolucionário com tecnologia de ponta.',
-      conteudoCaixa: ['1x iPhone 16', '1x Cabo USB-C'],
-    },
-    {
-      id: 2,
-      name: 'Samsung Galaxy 23 Ultra',
-      image: 'https://images3.kabum.com.br/produtos/fotos/sync_mirakl/422463/Smartphone-Samsung-Galaxy-S23-Ultra-5G-256GB-12GB-RAM-Octa-Core-C-mera-200MP-Selfie-12MP-Tela-6-8-Caneta-S-Pen-Preto_1721308269_g.jpg',
-      priceCash: 5000,
-      installments: 10,
-      priceInstallment: 600,
-      description: 'Um smartphone com uma das melhores câmeras do mercado.',
-      conteudoCaixa: ['1x Samsung Galaxy 23 Ultra', '1x Carregador', '1x Fone de Ouvido'],
-    },
-    {
-      id: 3,
-      name: 'Iphone 15 Pro Max',
-      image: 'https://m.media-amazon.com/images/I/81IPGZtygYL._AC_SX569_.jpg',
-      priceCash: 8000,
-      installments: 10,
-      priceInstallment: 1400,
-      description: 'Um smartphone revolucionário com tecnologia de ponta.',
-      conteudoCaixa: ['1x iPhone 15 Pro Max', '1x cabo USB-C'],
-    }
-  ];
+  useEffect(() => {
+    // Função para buscar os produtos da API
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/products');
+        setProducts(response.data); // Armazena os produtos no estado
+      } catch (error) {
+        console.error('Erro ao buscar produtos:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -124,7 +107,7 @@ function App() {
 
           <Route
             path="/cupons"
-            element={isAuthenticated ? <CouponsPage /> : <Navigate to="/login" />} // Nova rota para cupons
+            element={isAuthenticated ? <CouponsPage /> : <Navigate to="/login" />}
           />
         </Routes>
       </MainContainer>

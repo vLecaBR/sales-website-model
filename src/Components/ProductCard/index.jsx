@@ -1,3 +1,4 @@
+// ProductCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -27,7 +28,10 @@ const ProductCard = ({ product, setCartItems }) => {
     <ProductContainer>
       <ProductImage src={product.image} alt={product.name} />
       <ProductName>{product.name}</ProductName>
-      <ProductPrice>R$ {product.priceCash.toFixed(2)}</ProductPrice>
+      {/* Verifique se priceCash existe antes de usar toFixed */}
+      <ProductPrice>
+        R$ {product.priceCash ? product.priceCash.toFixed(2) : '0.00'}
+      </ProductPrice>
       <Link to={`/produto/${product.id}`}>
         <DetailButton>Ver Detalhes</DetailButton>
       </Link>
