@@ -18,17 +18,17 @@ import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [products, setProducts] = useState([]); // Estado para armazenar os produtos da API
+  const [products, setProducts] = useState([]); //armazena os produtos da API
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Função para buscar os produtos da API
+    //busca os produtos da API
     const fetchProducts = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/products');
-        setProducts(response.data); // Armazena os produtos no estado
+        setProducts(response.data); //armazena os produtos no state
       } catch (error) {
         console.error('Erro ao buscar produtos:', error);
       }
