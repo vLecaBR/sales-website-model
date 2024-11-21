@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function ProductsList() {
   const [products, setProducts] = useState([]);
-  
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -22,7 +22,7 @@ function ProductsList() {
     <div>
       <h1>Lista de Produtos</h1>
       <div className="products-grid">
-        {products.map(product => (
+        {products.map((product) => (
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} />
             <h2>{product.name}</h2>
@@ -30,7 +30,8 @@ function ProductsList() {
             <p>Preço: R$ {product.price}</p>
             <p>Parcelas: {product.installments}x de R$ {product.priceInstallment}</p>
             <ul>
-              {product.conteudoCaixa.map((item, index) => (
+              {/* Garantir que conteudoCaixa seja sempre um array */}
+              {(Array.isArray(product.conteudoCaixa) ? product.conteudoCaixa : []).map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>

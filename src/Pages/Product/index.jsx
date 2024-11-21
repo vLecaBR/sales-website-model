@@ -46,13 +46,13 @@ const ProductPage = ({ products }) => {
           <ProductPrice>
             R$ {product.price ? product.price.toFixed(2) : '0.00'}
           </ProductPrice>
-          
+
           <QuantityControl>
             <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
             <span>{quantity}</span>
             <button onClick={() => setQuantity(quantity + 1)}>+</button>
           </QuantityControl>
-          
+
           <FreightCalculator>
             <input 
               type="text" 
@@ -65,7 +65,7 @@ const ProductPage = ({ products }) => {
               <p className="freight-cost">Frete: R$ {freightCost.toFixed(2)}</p>
             )}
           </FreightCalculator>
-          
+
           <BuyButton>Adicionar ao Carrinho</BuyButton>
         </ProductDetails>
       </ProductContainer>
@@ -75,7 +75,8 @@ const ProductPage = ({ products }) => {
       <BoxContent>
         <BoxContentTitle>Conteúdo da Caixa</BoxContentTitle>
         <BoxContentList>
-          {product.conteudoCaixa.map((item, index) => (
+          {/* Garantir que conteudoCaixa seja sempre um array */}
+          {(Array.isArray(product.conteudoCaixa) ? product.conteudoCaixa : []).map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </BoxContentList>
