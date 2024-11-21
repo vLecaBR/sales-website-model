@@ -77,7 +77,7 @@ const ProductPage = ({ products }) => {
           <BoxContentList>
             {(Array.isArray(product.conteudoCaixa)
               ? product.conteudoCaixa // É um array, usa diretamente
-              : typeof product.conteudoCaixa === 'string'
+              : typeof product.conteudoCaixa === 'string' //se for string converter para array
               ? product.conteudoCaixa.split(',') // Converte string para array, supondo itens separados por vírgula
               : []
             ).map((item, index) => (
