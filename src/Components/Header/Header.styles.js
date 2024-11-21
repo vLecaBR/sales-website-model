@@ -157,7 +157,7 @@ export const Sidebar = styled.div`
   left: 0;
   height: 100%;
   width: 250px;
-  background-color: #4A00E0;
+  background-color: #7732fc;
   padding: 2rem;
   transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
   transition: transform 0.3s ease-in-out;
