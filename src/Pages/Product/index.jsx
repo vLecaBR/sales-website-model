@@ -74,13 +74,18 @@ const ProductPage = ({ products }) => {
 
       <BoxContent>
         <BoxContentTitle>Conteúdo da Caixa</BoxContentTitle>
-        <BoxContentList>
-          {/* Garantir que conteudoCaixa seja sempre um array */}
-          {(Array.isArray(product.conteudoCaixa) ? product.conteudoCaixa : []).map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </BoxContentList>
-      </BoxContent>
+          <BoxContentList>
+            {(Array.isArray(product.conteudoCaixa)
+              ? product.conteudoCaixa // É um array, usa diretamente
+              : typeof product.conteudoCaixa === 'string'
+              ? product.conteudoCaixa.split(',') // Converte string para array, supondo itens separados por vírgula
+              : []
+            ).map((item, index) => (
+              <li key={index}>{item}</li>
+        ))}
+      </BoxContentList>
+    </BoxContent>
+
     </ProductPageContainer>
   );
 };
