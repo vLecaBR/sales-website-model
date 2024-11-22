@@ -100,6 +100,10 @@ export const ProfileSection = styled.div`
   align-items: center;
   margin-right: 2rem;
 
+  @media (max-width: 1300px) {
+    margin-bottom: 1rem;
+  }
+
   @media (max-width: 768px) {
     margin-right: 1rem;
   }
@@ -129,6 +133,9 @@ export const LinksContainer = styled.div`
   align-items: center;
   margin-right: 2rem;
 
+  @media (max-width: 1300px) {
+    margin-bottom: 1rem;
+  }
   @media (max-width: 768px) {
     margin-right: 1rem;
   }
