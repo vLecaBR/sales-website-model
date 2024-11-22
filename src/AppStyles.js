@@ -11,12 +11,13 @@ export const AppContainer = styled.div`
 export const MainContainer = styled.main`
   padding: 20px;
   flex-grow: 1;
-  margin-bottom: 200px;
+  margin-bottom: 25px;
 `;
 
 export const Title = styled.h1`
   text-align: center;
   margin: 20px 0;
+  margin-top: 80px;
 `;
 
 export const ProductsGrid = styled.div`
