@@ -9,15 +9,15 @@ export const AppContainer = styled.div`
 `;
 
 export const MainContainer = styled.main`
-  padding: 20px;
+  padding: 1.5%;
   flex-grow: 1;
   margin-bottom: 25px;
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  margin: 20px 0;
-  margin-top: 80px;
+  margin: 2% 0;
+  margin-top: 5%;
 
   @media (max-width: 1300px) {
     margin-top: 5%;
