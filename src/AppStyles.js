@@ -18,6 +18,10 @@ export const Title = styled.h1`
   text-align: center;
   margin: 20px 0;
   margin-top: 80px;
+
+  @media (max-width: 1300px) {
+    margin-top: 5%;
+  }
 `;
 
 export const ProductsGrid = styled.div`
