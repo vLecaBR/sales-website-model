@@ -82,7 +82,7 @@ export const TotalPrice = styled.h2`
 export const CheckoutButton = styled.button`
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(90deg, #8445FF, #A2FA28);
+  background: #00b300;
   color: white;
   font-size: 1.2rem;
   border: none;
@@ -91,7 +91,7 @@ export const CheckoutButton = styled.button`
   transition: background 0.3s;
 
   &:hover {
-    background: linear-gradient(90deg, #6f36b2, #8de72c);
+    background:#6f36b2;
   }
 `;
 

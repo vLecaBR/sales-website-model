@@ -23,7 +23,7 @@ export default function CartPage({ cartItems, setCartItems }) {
 
   // Corrigindo o cálculo do total
   const total = cartItems.reduce((acc, item) => {
-    const price = item.priceCash ? item.priceCash : 0; // Usando priceCash
+    const price = item.price ? item.price : 0; // Usando priceCash
     const quantity = item.quantity ? item.quantity : 1; // Garantindo que a quantidade está definida
     return acc + price * quantity;
   }, 0).toFixed(2);
@@ -42,7 +42,7 @@ export default function CartPage({ cartItems, setCartItems }) {
                 <ItemInfo>
                   <ItemName>{item.name}</ItemName>
                   <ItemPrice>
-                    R$ {item.priceCash ? item.priceCash.toFixed(2) : ''} x {item.quantity ? item.quantity : 1}
+                    R$ {item.price ? item.price.toFixed(2) : ''} x {item.quantity ? item.quantity : 1}
                   </ItemPrice>
                 </ItemInfo>
               </ItemDetails>
