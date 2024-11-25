@@ -9,33 +9,33 @@ import {
   RedirectLink
 } from './Cadastro.styles';
 
-export default function Cadastro() {
+ //! Adiciona a página de cadastro
+export default function Cadastro() { 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
+    e.preventDefault(); //! Previne o comportamento padrão do formulário
+    if (password !== confirmPassword) { //! Verifica se as senhas coincidem
       alert('As senhas não coincidem');
       return;
     }
-    try {
+    try { //! Envia os dados do formulário para a API
       await axios.post('http://localhost:5000/api/users/cadastro', {
         name,
         email,
         password,
       });
-      alert('Cadastro bem-sucedido!');
-      navigate('/login');
-    } catch (err) {
+      alert('Cadastro bem-sucedido!'); //! Exibe um alerta de sucesso
+      navigate('/login'); //! Redireciona para a página de login
+    } catch (err) { //! Exibe um alerta de erro caso ocorra um erro
       setError(err.response?.data?.message || 'Erro ao cadastrar. Tente novamente.');
     }
   };
-
+  //! Adiciona o formulário de cadastro
   return (
     <CadastroContainer>
       <CadastroForm onSubmit={handleSubmit}>
