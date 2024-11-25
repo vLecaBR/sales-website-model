@@ -10,31 +10,31 @@ import {
   RedirectLink
 } from './Login.styles';
 
-export default function Login({ setIsAuthenticated }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+export default function Login({ setIsAuthenticated }) { //! Adiciona a função setIsAuthenticated
+  const [email, setEmail] = useState(''); //! Adiciona o estado de email
+  const [password, setPassword] = useState(''); 
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => { //! Adiciona a função de login
+    e.preventDefault(); //! Previne o comportamento padrão do formulário
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
+      const response = await axios.post('http://localhost:5000/api/users/login', { //! Envia os dados do formulário para a API
         email,
         password,
       });
-      // Armazena o token e os dados do usuário no localStorage
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify({
-        id: response.data.user.id,
+      
+      localStorage.setItem('token', response.data.token); //! Salva o token no localStorage
+      localStorage.setItem('user', JSON.stringify({ //! Salva os dados do usuário no localStorage
+        id: response.data.user.id, //! Salva o id, nome e email do usuário
         name: response.data.user.name,
         email: response.data.user.email,
       }));
-      setIsAuthenticated(true);
+      setIsAuthenticated(true); //! Define o estado de autenticação como verdadeiro
       alert('Login bem-sucedido!');
-      navigate('/'); // Redirecionar para a página principal
+      navigate('/'); //! Redirecionar para a página principal
     } catch (err) {
-      // Tratamento de erros com base na resposta do backend
+      //! Tratamento de erros com base na resposta do backend
       if (err.response && err.response.status === 401) {
         setError('Email ou senha inválidos.');
       } else {
@@ -45,21 +45,21 @@ export default function Login({ setIsAuthenticated }) {
 
   return (
     <LoginContainer>
-      <LoginForm onSubmit={handleSubmit}>
+      <LoginForm onSubmit={handleSubmit}> //! Adiciona o formulário de login
         <h2 style={{ color: '#8445FF' }}>Login</h2>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <Input
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)} //! Atualiza o estado com o novo valor
           required
         />
         <Input
           type="password"
           placeholder="Senha"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)} //! Atualiza o estado com o novo valor
           required
         />
         <Button type="submit">Entrar</Button>
