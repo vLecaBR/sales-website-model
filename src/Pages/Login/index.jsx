@@ -45,7 +45,7 @@ export default function Login({ setIsAuthenticated }) { //! Adiciona a função 
 
   return (
     <LoginContainer>
-      <LoginForm onSubmit={handleSubmit}> //! Adiciona o formulário de login
+      <LoginForm onSubmit={handleSubmit}> 
         <h2 style={{ color: '#8445FF' }}>Login</h2>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <Input
