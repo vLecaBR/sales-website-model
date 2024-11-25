@@ -20,28 +20,28 @@ const MinhaConta = () => { //! Adiciona a página MinhaConta
 
       <Section>
         <SectionTitle>Minhas Informações</SectionTitle>
-        <p>Nome: {user.name}</p> //! Exibe o nome do usuário
-        <p>Email: {user.email}</p> //! Exibe o email do usuário
+        <p>Nome: {user.name}</p> 
+        <p>Email: {user.email}</p>
       </Section>
 
       <Section>
         <SectionTitle>Minhas Compras</SectionTitle>
-        <Button onClick={() => navigate('/minhas-compras')}>Ver Compras</Button> //! Adiciona um botão para ver as compras
+        <Button onClick={() => navigate('/minhas-compras')}>Ver Compras</Button> 
       </Section>
 
       <Section>
         <SectionTitle>Carrinho</SectionTitle>
-        <Button onClick={() => navigate('/cart')}>Ver Carrinho</Button> //! Adiciona um botão para ver o carrinho
+        <Button onClick={() => navigate('/cart')}>Ver Carrinho</Button> 
       </Section>
 
       <Section>
         <SectionTitle>Métodos de Pagamento</SectionTitle>
-        <Button onClick={() => navigate('/metodos-pagamento')}>Gerenciar Métodos de Pagamento</Button> //! Adiciona um botão para gerenciar os métodos de pagamento
+        <Button onClick={() => navigate('/metodos-pagamento')}>Gerenciar Métodos de Pagamento</Button> 
       </Section>
 
       <Section>
         <SectionTitle>Configurações da Conta</SectionTitle>
-        <Button onClick={() => navigate('/settings')}>Configurações</Button> //! Adiciona um botão para acessar as configurações da conta
+        <Button onClick={() => navigate('/settings')}>Configurações</Button>
       </Section>
     </Container>
   );

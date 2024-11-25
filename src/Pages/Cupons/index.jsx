@@ -27,13 +27,13 @@ const CouponsPage = () => {
 
   return (
     <CouponsContainer> 
-      <h1>Meus Cupons</h1> //! Adiciona o título da página
-      <div className="coupons-grid"> //! Adiciona a grade de cupons
-        {coupons.map(coupon => ( //! Adiciona os cupons
-          <CouponCard key={coupon.id}> //! Adiciona o cartão de cupom
-            <CouponTitle>{coupon.title}</CouponTitle> //! Adiciona o título do cupom
-            <CouponValue>{coupon.value}</CouponValue> //! Adiciona o valor do cupom
-            <CouponConditions>{coupon.conditions}</CouponConditions> //! Adiciona as condições do cupom
+      <h1>Meus Cupons</h1> 
+      <div className="coupons-grid"> 
+        {coupons.map(coupon => (
+          <CouponCard key={coupon.id}> 
+            <CouponTitle>{coupon.title}</CouponTitle>
+            <CouponValue>{coupon.value}</CouponValue>
+            <CouponConditions>{coupon.conditions}</CouponConditions> 
           </CouponCard>
         ))}
       </div>

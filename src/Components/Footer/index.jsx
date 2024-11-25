@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        {/* Seção de navegação */} //! Adiciona a seção de navegação
+        {/* Seção de navegação */} 
         <FooterSection> 
           <SectionTitle>Navegação</SectionTitle>
           <FooterLink href="/">Home</FooterLink>
@@ -18,14 +18,14 @@ const Footer = () => {
           <FooterLink href="/contact">Contato</FooterLink>
         </FooterSection>
 
-        {/* Seção de Contato */} //! Adiciona a seção de contato
+        {/* Seção de Contato */} 
         <FooterSection> 
           <SectionTitle>Contato</SectionTitle>
           <p>Telefone: (11) 1234-5678</p>
           <p>Email: contato@loja.com</p>
         </FooterSection>
 
-        {/* Seção de redes sociais */} //! Adiciona a seção de redes sociais
+        {/* Seção de redes sociais */} 
         <FooterSection> 
           <SectionTitle>Redes</SectionTitle>
           <SocialIcons>
@@ -39,7 +39,7 @@ const Footer = () => {
         </FooterSection>
       </FooterContent>
 
-      {/* Copyright */} //! Adiciona o texto de direitos autorais
+      {/* Copyright */} 
       <Copyright>&copy; 2024 Sua Loja. Todos os direitos reservados.</Copyright>
     </FooterContainer>
   );

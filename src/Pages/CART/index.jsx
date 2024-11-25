@@ -17,7 +17,7 @@ import {
 } from './CartPage.styles';
 
 export default function CartPage({ cartItems, setCartItems }) {
-  const removeFromCart = (id) => { //! Adiciona a função de remoção de item do carrinho
+  const removeFromCart = (id) => { 
     setCartItems(cartItems.filter((item) => item.id !== id));
   }; 
 
@@ -32,21 +32,21 @@ export default function CartPage({ cartItems, setCartItems }) {
     <div>
 
       <CartContainer>
-        {cartItems.length === 0 ? ( //! Adiciona a mensagem de carrinho vazio
+        {cartItems.length === 0 ? ( 
           <EmptyCartMessage>Seu carrinho está vazio!</EmptyCartMessage> 
         ) : (
-          cartItems.map((item) => (//! Adiciona a lista de itens do carrinho
+          cartItems.map((item) => (
             <CartItem key={item.id}>
               <ItemDetails>
-                <ItemImage src={item.image} alt={item.name} /> //! Adiciona a imagem do produto
+                <ItemImage src={item.image} alt={item.name} /> 
                 <ItemInfo>
-                  <ItemName>{item.name}</ItemName> //! Adiciona o nome do produto
+                  <ItemName>{item.name}</ItemName> 
                   <ItemPrice>
-                    R$ {item.price ? item.price.toFixed(2) : ''} x {item.quantity ? item.quantity : 1} //! Adiciona o preço e a quantidade
+                    R$ {item.price ? item.price.toFixed(2) : ''} x {item.quantity ? item.quantity : 1}
                   </ItemPrice>
                 </ItemInfo>
               </ItemDetails>
-              <RemoveButton onClick={() => removeFromCart(item.id)}> //! Adiciona o botão de remover
+              <RemoveButton onClick={() => removeFromCart(item.id)}> 
                 <FiX /> Remover
               </RemoveButton>
             </CartItem>
@@ -54,7 +54,7 @@ export default function CartPage({ cartItems, setCartItems }) {
         )}
 
         {/* Resumo do carrinho */}
-        {cartItems.length > 0 && ( //! Adiciona o resumo do carrinho
+        {cartItems.length > 0 && ( 
           <CartSummary>
             <TotalPrice>Total: R$ {total}</TotalPrice>
             <CheckoutButton>Finalizar Compra</CheckoutButton>

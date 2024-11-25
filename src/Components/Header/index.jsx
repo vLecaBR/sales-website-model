@@ -65,7 +65,7 @@ export default function Header() {
         </SidebarItem>
 
         {isLoggedIn ? (
-          <> //! Adiciona os links de Minha Conta, Carrinho, Minhas Compras, Cupons, Configurações e Sair
+          <> 
             <SidebarItem as={Link} to="/minha-conta" onClick={toggleMenu}>
               <SidebarIcon>
                 <FiUser />

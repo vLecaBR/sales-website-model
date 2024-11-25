@@ -61,8 +61,8 @@ const ConfiguracoesConta = () => {
 
   return (
     <Container>
-      <Title>Configurações da Conta</Title> //! Adiciona o título da página
-      <form onSubmit={handleUpdate}> //! Adiciona o formulário de atualização
+      <Title>Configurações da Conta</Title> 
+      <form onSubmit={handleUpdate}> 
         <Input
           type="text"
           value={user.name}
@@ -85,7 +85,7 @@ const ConfiguracoesConta = () => {
         />
         <Button type="submit">Atualizar Informações</Button>
       </form>
-      {message && <p>{message}</p>} //! Exibe a mensagem de sucesso ou erro
+      {message && <p>{message}</p>}
     </Container>
   );
 };

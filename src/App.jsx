@@ -65,7 +65,7 @@ function App() {
             path="/"
             element={
               <>
-                <Title>Nossos Produtos</Title> //! Adiciona o título da página
+                <Title>Nossos Produtos</Title>
                 <ProductsGrid>
                   {products.map((product) => ( //! Mapeia os produtos
                     <ProductCard key={product.id} product={product} setCartItems={setCartItems} /> //! Adiciona o componente ProductCard

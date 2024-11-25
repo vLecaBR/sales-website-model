@@ -46,17 +46,17 @@ const MetodosPagamento = () => { //! Adiciona a página de métodos de pagamento
             </CardIcon>
             <CardDetails>
               <p>{card.number}</p>
-              <small>{card.holder} | Expira em {card.expiry}</small> //! Adiciona o nome do titular e a validade
+              <small>{card.holder} | Expira em {card.expiry}</small> 
             </CardDetails>
             <CardActions>
-              <FiTrash2 onClick={() => handleDeleteCard(card.id)} title="Remover cartão" /> //! Adiciona o botão de excluir
+              <FiTrash2 onClick={() => handleDeleteCard(card.id)} title="Remover cartão" /> 
             </CardActions>
           </CardItem>
         ))}
       </CardList>
 
       {showForm ? (
-        <AddCardForm onSubmit={handleFormSubmit}> //! Adiciona o formulário de adição de cartão
+        <AddCardForm onSubmit={handleFormSubmit}> 
           <FormField>
             <label>Número do Cartão</label>
             <input
