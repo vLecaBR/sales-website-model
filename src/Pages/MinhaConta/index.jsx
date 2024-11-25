@@ -3,20 +3,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Title, Section, SectionTitle, Button } from './MinhaConta.styles';
 
-const MinhaConta = () => {
-  const navigate = useNavigate();
+const MinhaConta = () => { //! Adiciona a página MinhaConta
+  const navigate = useNavigate(); //! Adiciona a navegação
+  const isLoggedIn = localStorage.getItem('token') !== null; //! Verifica se o usuário está logado
 
-  // Verifica se o usuário está logado
-  const isLoggedIn = localStorage.getItem('token') !== null;
-
-  // Se não estiver logado, redireciona para a página de login
-  if (!isLoggedIn) {
+  if (!isLoggedIn) { //! Se o usuário não estiver logado, redireciona para a página de login
     navigate('/login');
-    return null; // Retorna null enquanto redireciona
+    return null; //! Retorna null enquanto redireciona
   }
 
-  // Obtém os dados do usuário do localStorage
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user')); //! Obtém os dados do usuário do localStorage
 
   return (
     <Container>
@@ -24,29 +20,28 @@ const MinhaConta = () => {
 
       <Section>
         <SectionTitle>Minhas Informações</SectionTitle>
-        {/* Aqui você pode adicionar informações do usuário */}
-        <p>Nome: {user.name}</p>
-        <p>Email: {user.email}</p>
+        <p>Nome: {user.name}</p> //! Exibe o nome do usuário
+        <p>Email: {user.email}</p> //! Exibe o email do usuário
       </Section>
 
       <Section>
         <SectionTitle>Minhas Compras</SectionTitle>
-        <Button onClick={() => navigate('/minhas-compras')}>Ver Compras</Button>
+        <Button onClick={() => navigate('/minhas-compras')}>Ver Compras</Button> //! Adiciona um botão para ver as compras
       </Section>
 
       <Section>
         <SectionTitle>Carrinho</SectionTitle>
-        <Button onClick={() => navigate('/cart')}>Ver Carrinho</Button>
+        <Button onClick={() => navigate('/cart')}>Ver Carrinho</Button> //! Adiciona um botão para ver o carrinho
       </Section>
 
       <Section>
         <SectionTitle>Métodos de Pagamento</SectionTitle>
-        <Button onClick={() => navigate('/metodos-pagamento')}>Gerenciar Métodos de Pagamento</Button>
+        <Button onClick={() => navigate('/metodos-pagamento')}>Gerenciar Métodos de Pagamento</Button> //! Adiciona um botão para gerenciar os métodos de pagamento
       </Section>
 
       <Section>
         <SectionTitle>Configurações da Conta</SectionTitle>
-        <Button onClick={() => navigate('/settings')}>Configurações</Button>
+        <Button onClick={() => navigate('/settings')}>Configurações</Button> //! Adiciona um botão para acessar as configurações da conta
       </Section>
     </Container>
   );
