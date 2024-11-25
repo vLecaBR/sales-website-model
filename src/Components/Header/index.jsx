@@ -22,8 +22,9 @@ export default function Header() {
 
   const isLoggedIn = localStorage.getItem('token') !== null;
 
-  return (
+  return ( //! Adiciona o menu lateral e o ícone de fechar
     <>
+    {/* Header */} 
       <StyledHeader>
         <LeftSection>
           <HamburgerMenu onClick={toggleMenu} aria-label="Menu">
@@ -64,7 +65,7 @@ export default function Header() {
         </SidebarItem>
 
         {isLoggedIn ? (
-          <>
+          <> //! Adiciona os links de Minha Conta, Carrinho, Minhas Compras, Cupons, Configurações e Sair
             <SidebarItem as={Link} to="/minha-conta" onClick={toggleMenu}>
               <SidebarIcon>
                 <FiUser />
