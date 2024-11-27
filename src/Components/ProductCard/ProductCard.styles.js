@@ -60,6 +60,7 @@ export const CartButton = styled(Button)`
   margin-top: 5px;
 `;
 
+// Notificação de adição ao carrinho
 export const Notification = styled.div`
   position: fixed;
   bottom: 20px;
