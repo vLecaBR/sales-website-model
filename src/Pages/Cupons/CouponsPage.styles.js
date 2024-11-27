@@ -1,6 +1,7 @@
 // src/Pages/CouponsPage.styles.js
 import styled from 'styled-components';
 
+// Container da página de cupons
 export const CouponsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,6 +26,7 @@ export const CouponsContainer = styled.div`
   }
 `;
 
+// Card de cupom
 export const CouponCard = styled.div`
   background-color: #fff;
   border-radius: 8px;
@@ -44,12 +46,14 @@ export const CouponCard = styled.div`
   }
 `;
 
+// Título do cupom
 export const CouponTitle = styled.h3`
   font-size: 1.1rem; // Diminuindo um pouco o tamanho do texto
   margin: 10px 0;
   color: #8445FF; // Cor do título
 `;
 
+// Valor do cupom
 export const CouponValue = styled.p`
   font-size: 1.3rem; // Diminuindo um pouco o tamanho do valor
   font-weight: bold;
@@ -57,6 +61,7 @@ export const CouponValue = styled.p`
   color: #80c520; // Cor do valor
 `;
 
+// Condições do cupom
 export const CouponConditions = styled.p`
   font-size: 0.85rem; // Diminuindo o tamanho das condições
   color: #6c757d; // Cor das condições
