@@ -18,66 +18,55 @@ import {
   BoxContentList
 } from './ProductPage.styles';
 
-const ProductPage = ({ products, setCartItems }) => { //! Adicione setCartItems como prop
-  const { id } = useParams();
-  const product = products.find((product) => product.id === parseInt(id));
+const ProductPage = ({ products }) => { //! Adiciona a página de detalhes do produto
+  const { id } = useParams(); //! Obtém o ID do produto da URL
+  const product = products.find((product) => product.id === parseInt(id)); //! Encontra o produto pelo ID
+
+  //! Estados para quantidade e cálculo do frete
   const [quantity, setQuantity] = useState(1);
   const [cep, setCep] = useState('');
   const [freightCost, setFreightCost] = useState(null);
 
-  if (!product) {
+  if (!product) { //! Se o produto não for encontrado, exibe uma mensagem
     return <h1>Produto não encontrado</h1>;
   }
 
-  const calculateFreight = () => {
-    const simulatedFreightCost = cep ? (parseInt(cep) % 1000) : 0;
-    setFreightCost(simulatedFreightCost);
-  };
-
-  //! Função para adicionar ao carrinho
-  const addToCart = () => {
-    setCartItems((prevItems) => {
-      const itemIndex = prevItems.findIndex((item) => item.id === product.id);
-      if (itemIndex > -1) {
-        const updatedItems = [...prevItems];
-        updatedItems[itemIndex].quantity += quantity; //! Adiciona a quantidade selecionada
-        return updatedItems;
-      } else {
-        return [...prevItems, { ...product, quantity }];
-      }
-    });
+  const calculateFreight = () => { //! Adiciona a função para calcular o frete
+    //! Lógica simulada para cálculo do frete
+    const simulatedFreightCost = cep ? (parseInt(cep) % 1000) : 0; //! Calcula o frete baseado no CEP
+    setFreightCost(simulatedFreightCost); //! Define o custo do frete
   };
 
   return (
     <ProductPageContainer>
       <ProductContainer>
-        <ProductImage src={product.image} alt={product.name} />
+        <ProductImage src={product.image} alt={product.name} /> 
         <ProductDetails>
           <ProductTitle>{product.name}</ProductTitle>
           <ProductPrice>
-            R$ {product.price ? product.price.toFixed(2) : '0.00'}
+            R$ {product.price ? product.price.toFixed(2) : '0.00'} 
           </ProductPrice>
 
           <QuantityControl>
-            <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
+            <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button> 
             <span>{quantity}</span>
-            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button> 
           </QuantityControl>
 
           <FreightCalculator>
-            <input
-              type="text"
-              value={cep}
-              onChange={(e) => setCep(e.target.value)}
-              placeholder="Digite seu CEP"
+            <input 
+              type="text" 
+              value={cep} 
+              onChange={(e) => setCep(e.target.value)} //! Adiciona o campo de CEP
+              placeholder="Digite seu CEP" 
             />
-            <FreightButton onClick={calculateFreight}>Calcular Frete</FreightButton>
+            <FreightButton onClick={calculateFreight}>Calcular Frete</FreightButton> 
             {freightCost !== null && (
-              <p className="freight-cost">Frete: R$ {freightCost.toFixed(2)}</p>
+              <p className="freight-cost">Frete: R$ {freightCost.toFixed(2)}</p> //! Exibe o custo do frete
             )}
           </FreightCalculator>
 
-          <BuyButton onClick={addToCart}>Adicionar ao Carrinho</BuyButton>
+          <BuyButton>Adicionar ao Carrinho</BuyButton>
         </ProductDetails>
       </ProductContainer>
 
@@ -85,17 +74,18 @@ const ProductPage = ({ products, setCartItems }) => { //! Adicione setCartItems 
 
       <BoxContent>
         <BoxContentTitle>Conteúdo da Caixa</BoxContentTitle>
-        <BoxContentList>
-          {(Array.isArray(product.conteudoCaixa)
-            ? product.conteudoCaixa
-            : typeof product.conteudoCaixa === 'string'
-            ? product.conteudoCaixa.split(',')
-            : []
-          ).map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </BoxContentList>
-      </BoxContent>
+          <BoxContentList>
+            {(Array.isArray(product.conteudoCaixa)
+              ? product.conteudoCaixa //! É um array, usa diretamente
+              : typeof product.conteudoCaixa === 'string' //! se for string converter para array
+              ? product.conteudoCaixa.split(',') //! Converte string para array, supondo itens separados por vírgula
+              : []
+            ).map((item, index) => ( //! Mapeia os itens do conteúdo da caixa
+              <li key={index}>{item}</li> //! Adiciona o item
+        ))}
+      </BoxContentList>
+    </BoxContent>
+
     </ProductPageContainer>
   );
 };
