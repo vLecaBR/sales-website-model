@@ -15,18 +15,20 @@ import {
   BoxContent,
   BoxContentTitle,
   BoxContentList,
+  Notification,
 } from './ProductPage.styles';
 
 const ProductPage = ({ products, productcard, setCartItems }) => {
-  const { id } = useParams(); // Obtém o ID do produto da URL
-  const product = products.find((product) => product.id === parseInt(id)) || productcard; // Busca o produto
+  const { id } = useParams();
+  const product = products.find((product) => product.id === parseInt(id)) || productcard;
 
-  const [quantity, setQuantity] = useState(1); // Estado para a quantidade
-  const [cep, setCep] = useState(''); // Estado para o CEP
-  const [freightCost, setFreightCost] = useState(null); // Estado para o custo do frete
+  const [quantity, setQuantity] = useState(1);
+  const [cep, setCep] = useState('');
+  const [freightCost, setFreightCost] = useState(null);
+  const [showNotification, setShowNotification] = useState(false); // Estado para notificação
 
   if (!product) {
-    return <h1>Produto não encontrado</h1>; // Caso não encontre o produto
+    return <h1>Produto não encontrado</h1>;
   }
 
   const addToCart = () => {
@@ -40,10 +42,15 @@ const ProductPage = ({ products, productcard, setCartItems }) => {
         return [...prevItems, { ...product, quantity }];
       }
     });
+
+    // Exibe a notificação
+    setShowNotification(true);
+    // Oculta a notificação após 3 segundos
+    setTimeout(() => setShowNotification(false), 3000);
   };
 
   const calculateFreight = () => {
-    const simulatedFreightCost = cep ? parseInt(cep) % 1000 : 0; // Simula o cálculo do frete
+    const simulatedFreightCost = cep ? parseInt(cep) % 1000 : 0;
     setFreightCost(simulatedFreightCost);
   };
 
@@ -93,6 +100,13 @@ const ProductPage = ({ products, productcard, setCartItems }) => {
           ))}
         </BoxContentList>
       </BoxContent>
+
+      {/* Notificação de Produto Adicionado */}
+      {showNotification && (
+        <Notification>
+          Produto adicionado ao carrinho!
+        </Notification>
+      )}
     </ProductPageContainer>
   );
 };

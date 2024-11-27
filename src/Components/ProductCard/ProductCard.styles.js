@@ -59,3 +59,17 @@ export const CartButton = styled(Button)`
   background-color: #28a745;
   margin-top: 5px;
 `;
+
+export const Notification = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4caf50; /* Verde para notificação de sucesso */
+  color: #fff; /* Texto branco */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  font-size: 16px; /* Tamanho do texto */
+  font-weight: bold; /* Texto em negrito */
+  z-index: 1000; /* Garantir que a notificação fique acima de outros elementos */
+`;
