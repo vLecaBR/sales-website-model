@@ -80,7 +80,7 @@ function App() {
             element={isAuthenticated ? <Cart cartItems={cartItems} setCartItems={setCartItems} /> : <Navigate to="/login" />} //! Adiciona a rota para o carrinho
           />
 
-          <Route path="/produto/:id" element={<ProductPage products={products} />} /> //! Adiciona a rota para a página do produto
+          <Route path="/produto/:id" element={<ProductPage products={products} setCartItems={setCartItems} />} /> //! Adiciona a rota para a página do produto
 
           <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> //! Adiciona a rota para a página de login
 
