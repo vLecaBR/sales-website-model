@@ -18,55 +18,66 @@ import {
   BoxContentList
 } from './ProductPage.styles';
 
-const ProductPage = ({ products }) => { //! Adiciona a página de detalhes do produto
-  const { id } = useParams(); //! Obtém o ID do produto da URL
-  const product = products.find((product) => product.id === parseInt(id)); //! Encontra o produto pelo ID
-
-  //! Estados para quantidade e cálculo do frete
+const ProductPage = ({ products, setCartItems }) => { //! Adicione setCartItems como prop
+  const { id } = useParams();
+  const product = products.find((product) => product.id === parseInt(id));
   const [quantity, setQuantity] = useState(1);
   const [cep, setCep] = useState('');
   const [freightCost, setFreightCost] = useState(null);
 
-  if (!product) { //! Se o produto não for encontrado, exibe uma mensagem
+  if (!product) {
     return <h1>Produto não encontrado</h1>;
   }
 
-  const calculateFreight = () => { //! Adiciona a função para calcular o frete
-    //! Lógica simulada para cálculo do frete
-    const simulatedFreightCost = cep ? (parseInt(cep) % 1000) : 0; //! Calcula o frete baseado no CEP
-    setFreightCost(simulatedFreightCost); //! Define o custo do frete
+  const calculateFreight = () => {
+    const simulatedFreightCost = cep ? (parseInt(cep) % 1000) : 0;
+    setFreightCost(simulatedFreightCost);
+  };
+
+  //! Função para adicionar ao carrinho
+  const addToCart = () => {
+    setCartItems((prevItems) => {
+      const itemIndex = prevItems.findIndex((item) => item.id === product.id);
+      if (itemIndex > -1) {
+        const updatedItems = [...prevItems];
+        updatedItems[itemIndex].quantity += quantity; //! Adiciona a quantidade selecionada
+        return updatedItems;
+      } else {
+        return [...prevItems, { ...product, quantity }];
+      }
+    });
   };
 
   return (
     <ProductPageContainer>
       <ProductContainer>
-        <ProductImage src={product.image} alt={product.name} /> //! Adiciona a imagem do produto
+        <ProductImage src={product.image} alt={product.name} />
         <ProductDetails>
-          <ProductTitle>{product.name}</ProductTitle> //! Adiciona o nome do produto
+          <ProductTitle>{product.name}</ProductTitle>
           <ProductPrice>
-            R$ {product.price ? product.price.toFixed(2) : '0.00'} //! Adiciona o preço do produto
+            R$ {product.price ? product.price.toFixed(2) : '0.00'}
           </ProductPrice>
 
           <QuantityControl>
-            <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button> //! Adiciona os botões de controle de quantidade
-            <span>{quantity}</span> //! Exibe a quantidade selecionada
-            <button onClick={() => setQuantity(quantity + 1)}>+</button> //! Adiciona os botões de controle de quantidade
+            <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button>
           </QuantityControl>
 
           <FreightCalculator>
-            <input 
-              type="text" 
-              value={cep} 
-              onChange={(e) => setCep(e.target.value)} //! Adiciona o campo de CEP
-              placeholder="Digite seu CEP" 
+            <input
+              type="text"
+              value={cep}
+              onChange={(e) => setCep(e.target.value)}
+              placeholder="Digite seu CEP"
             />
-            <FreightButton onClick={calculateFreight}>Calcular Frete</FreightButton> //! Adiciona o botão de calcular frete
+            <FreightButton onClick={calculateFreight}>Calcular Frete</FreightButton>
             {freightCost !== null && (
-              <p className="freight-cost">Frete: R$ {freightCost.toFixed(2)}</p> //! Exibe o custo do frete
+              <p className="freight-cost">Frete: R$ {freightCost.toFixed(2)}</p>
             )}
           </FreightCalculator>
 
-          <BuyButton>Adicionar ao Carrinho</BuyButton>
+          <BuyButton onClick={addToCart}>Adicionar ao Carrinho</BuyButton>
         </ProductDetails>
       </ProductContainer>
 
@@ -74,18 +85,17 @@ const ProductPage = ({ products }) => { //! Adiciona a página de detalhes do pr
 
       <BoxContent>
         <BoxContentTitle>Conteúdo da Caixa</BoxContentTitle>
-          <BoxContentList>
-            {(Array.isArray(product.conteudoCaixa)
-              ? product.conteudoCaixa //! É um array, usa diretamente
-              : typeof product.conteudoCaixa === 'string' //! se for string converter para array
-              ? product.conteudoCaixa.split(',') //! Converte string para array, supondo itens separados por vírgula
-              : []
-            ).map((item, index) => ( //! Mapeia os itens do conteúdo da caixa
-              <li key={index}>{item}</li> //! Adiciona o item
-        ))}
-      </BoxContentList>
-    </BoxContent>
-
+        <BoxContentList>
+          {(Array.isArray(product.conteudoCaixa)
+            ? product.conteudoCaixa
+            : typeof product.conteudoCaixa === 'string'
+            ? product.conteudoCaixa.split(',')
+            : []
+          ).map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </BoxContentList>
+      </BoxContent>
     </ProductPageContainer>
   );
 };
