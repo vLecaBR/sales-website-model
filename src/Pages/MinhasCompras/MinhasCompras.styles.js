@@ -9,17 +9,20 @@ export const Title = styled.h1`
   color: #333; /* Cor do texto */
 `;
 
+// Container da página
 export const PageContainer = styled.div`
   padding: 20px;
   background-color: #f8f9fa;
   margin-top: 5vh;
 `;
 
+// Container dos pedidos
 export const TabsContainer = styled.div`
   display: flex;
   margin-bottom: 20px;
 `;
 
+// Botão de troca de abas
 export const TabButton = styled.button`
   flex: 1;
   padding: 10px;
@@ -35,11 +38,13 @@ export const TabButton = styled.button`
   }
 `;
 
+// Lista de pedidos
 export const OrderList = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
+// Item do pedido
 export const OrderItem = styled.div`
   display: flex;
   align-items: center;
@@ -57,6 +62,7 @@ export const OrderItem = styled.div`
   }
 `;
 
+// Imagem do pedido
 export const OrderImage = styled.img`
   width: 60px;
   height: 60px;
@@ -64,14 +70,17 @@ export const OrderImage = styled.img`
   margin-right: 15px;
 `;
 
+// Detalhes do pedido
 export const OrderDetails = styled.div`
   flex: 1;
 `;
 
+// Status do pedido
 export const OrderStatus = styled.div`
   font-weight: bold;
 `;
 
+// Tela de clicar no pedido
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -85,6 +94,7 @@ export const ModalOverlay = styled.div`
   z-index: 1000;
 `;
 
+// Modal de detalhes do pedido
 export const Modal = styled.div`
   background: white;
   padding: 20px;
@@ -107,6 +117,7 @@ export const Modal = styled.div`
   }
 `;
 
+// Botão de fechar o modal
 export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
