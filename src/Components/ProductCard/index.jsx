@@ -12,7 +12,7 @@ import { Notification } from './ProductCard.styles'; // Reutilizando o estilo ex
 
 const ProductCard = ({ product, setCartItems }) => {
   const [showNotification, setShowNotification] = useState(false);
-
+  //! função para adicionar o produto ao carrinho
   const addToCart = () => {
     setCartItems((prevItems) => {
       const itemIndex = prevItems.findIndex((item) => item.id === product.id);
@@ -25,7 +25,7 @@ const ProductCard = ({ product, setCartItems }) => {
       }
     });
 
-    // Exibe a notificação temporariamente
+    //! Exibe a notificação temporariamente
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
