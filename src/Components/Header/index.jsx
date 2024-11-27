@@ -6,7 +6,7 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import {
   StyledHeader, LeftSection, CenterSection, RightSection, SearchContainer, SearchInput, HamburgerMenu,
-  ProfileSection, LoginLink, LinksContainer, Promocoes, Sidebar, SidebarCloseIcon, SidebarItem, SidebarIcon
+  Sidebar, SidebarCloseIcon, SidebarItem, SidebarIcon
 } from './Header.styles';
 
 export default function Header() {
@@ -40,16 +40,7 @@ export default function Header() {
         </CenterSection>
 
         <RightSection>
-          <LinksContainer>
-            <Promocoes>Promoções</Promocoes>
-          </LinksContainer>
-          <ProfileSection>
-            {!isLoggedIn ? (
-              <LoginLink as={Link} to="/login">Entre / Crie sua conta</LoginLink>
-            ) : (
-              <LoginLink as={Link} to="/minha-conta">Minha Conta</LoginLink>
-            )}
-          </ProfileSection>
+          {/* //! adiciona itens a direita do header */}
         </RightSection>
       </StyledHeader>
 

@@ -94,21 +94,6 @@ export const HamburgerMenu = styled.div`
   }
 `;
 
-export const ProfileSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 2rem;
-
-  @media (max-width: 1300px) {
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    margin-right: 1rem;
-  }
-`;
-
 export const LoginLink = styled.span`
   color: #fff;
   font-size: 1rem;
@@ -124,20 +109,6 @@ export const LoginLink = styled.span`
 
   @media (max-width: 768px) {
     display: none; /* Esconde o LoginLink em telas menores */
-  }
-`;
-
-export const LinksContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 2rem;
-
-  @media (max-width: 1300px) {
-    margin-bottom: 1rem;
-  }
-  @media (max-width: 768px) {
-    margin-right: 1rem;
   }
 `;
 
