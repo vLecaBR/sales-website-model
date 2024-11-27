@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Container da página de login
 export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -18,6 +19,7 @@ export const LoginContainer = styled.div`
   }
 `;
 
+// Formulário de login
 export const LoginForm = styled.form`
   background-color: #fff;
   padding: 2rem;
@@ -33,6 +35,7 @@ export const LoginForm = styled.form`
   }
 `;
 
+// Campos de texto
 export const Input = styled.input`
   width: 100%;
   padding: 0.75rem;
@@ -49,6 +52,7 @@ export const Input = styled.input`
   }
 `;
 
+// Botão
 export const Button = styled.button`
   width: 100%;
   padding: 0.75rem;
@@ -69,6 +73,7 @@ export const Button = styled.button`
   }
 `;
 
+// Link de redirecionamento
 export const RedirectLink = styled.p`
   text-align: center;
   margin-top: 1rem;
