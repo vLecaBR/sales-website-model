@@ -1,6 +1,7 @@
 // src/Pages/ProductPage.styles.js
 import styled from 'styled-components';
 
+// Container da página
 export const ProductPageContainer = styled.div`
   padding: 40px 20px;
   background-color: #f5f5f5; /* Fundo suave para a página */
@@ -10,6 +11,7 @@ export const ProductPageContainer = styled.div`
   margin-top: 10vh; /* Espaçamento superior */
 `;
 
+// Container para o produto
 export const ProductContainer = styled.div`
   display: flex;
   margin-bottom: 30px;
@@ -24,12 +26,14 @@ export const ProductContainer = styled.div`
   }
 `;
 
+// Imagem do produto
 export const ProductImage = styled.img`
   width: 300px;
   height: auto;
   object-fit: cover; /* Ajuste da imagem */
 `;
 
+// Container para os detalhes do produto
 export const ProductDetails = styled.div`
   padding: 20px;
   flex: 1;
@@ -38,18 +42,21 @@ export const ProductDetails = styled.div`
   justify-content: space-between;
 `;
 
+// Título do produto
 export const ProductTitle = styled.h2`
   font-size: 1.8rem;
   color: #333;
   margin: 0;
 `;
 
+// preço do produto
 export const ProductPrice = styled.p`
   font-size: 1.6rem;
   color: #e63946; /* Vermelho para o preço */
   margin: 10px 0;
 `;
 
+// Descrição do produto
 export const ProductDescription = styled.p`
   margin-top: 20px;
   font-size: 1rem;
@@ -59,6 +66,7 @@ export const ProductDescription = styled.p`
   padding-top: 20px; /* Espaçamento acima */
 `;
 
+// Botão de compra
 export const BuyButton = styled.button`
   background-color: #00b300; /* Verde para o botão */
   color: white;
@@ -75,6 +83,7 @@ export const BuyButton = styled.button`
   }
 `;
 
+// Container para o controle de quantidade
 export const QuantityControl = styled.div`
   display: flex;
   align-items: center;
@@ -101,6 +110,7 @@ export const QuantityControl = styled.div`
   }
 `;
 
+// Container para o frete
 export const FreightCalculator = styled.div`
   display: flex;
   align-items: center;
@@ -121,6 +131,7 @@ export const FreightCalculator = styled.div`
   }
 `;
 
+// Botão para calcular frete
 export const FreightButton = styled.button`
   background-color: #28a745; /* Verde para calcular frete */
   color: white;
@@ -135,6 +146,7 @@ export const FreightButton = styled.button`
   }
 `;
 
+// Container para o conteúdo
 export const BoxContent = styled.div`
   margin-top: 30px;
   background-color: #ffffff; /* Fundo branco para conteúdo */
@@ -143,6 +155,7 @@ export const BoxContent = styled.div`
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 `;
 
+// Título do conteúdo
 export const BoxContentTitle = styled.h3`
   margin-bottom: 10px;
   font-size: 1.5rem; /* Tamanho da fonte */
@@ -159,12 +172,14 @@ export const BoxContentList = styled.ul`
   }
 `;
 
+// custo do frete
 export const FreightCost = styled.p`
   margin-top: 10px;
   font-weight: bold;
-  color: #e63946; /* Vermelho para o custo do frete */
+  color: #e63946;
 `;
 
+// Notificação de adição ao carrinho
 export const Notification = styled.div`
   position: fixed;
   bottom: 20px;
