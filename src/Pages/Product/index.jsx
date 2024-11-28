@@ -46,7 +46,7 @@ const ProductPage = ({ products, productcard, setCartItems }) => {
     // Exibe a notificação
     setShowNotification(true);
     // Oculta a notificação após 3 segundos
-    setTimeout(() => setShowNotification(false), 3000);
+    setTimeout(() => setShowNotification(false), 4000);
   };
 
   const calculateFreight = () => {

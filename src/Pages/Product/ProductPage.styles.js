@@ -184,7 +184,7 @@ export const Notification = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #4caf50; /* Verde para notificação de sucesso */
+  background: #28A745; /* Verde para notificação de sucesso */
   color: #fff; /* Texto branco */
   padding: 10px 20px; /* Espaçamento interno */
   border-radius: 5px; /* Bordas arredondadas */
