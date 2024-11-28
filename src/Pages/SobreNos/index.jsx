@@ -1,64 +1,38 @@
 import React from 'react';
 import {
-  SobreNosContainer,
-  Title,
-  Description,
-  Section,
+  AboutContainer,
+  AboutTitle,
+  AboutSection,
   SectionTitle,
   SectionContent,
-  TeamGrid,
-  TeamMember,
-  MemberImage,
-  MemberName,
-  FooterText,
+  HighlightText,
 } from './SobreNos.styles';
 
 const SobreNos = () => {
   return (
-    <SobreNosContainer>
-      <Title>Sobre Nós</Title>
-      <Description>
-        Somos uma empresa comprometida em oferecer a melhor experiência de compra online. Desde a nossa fundação, trabalhamos para trazer qualidade, inovação e confiança para os nossos clientes.
-      </Description>
+    <AboutContainer>
+      <AboutTitle>Sobre Nós</AboutTitle>
+      <AboutSection>
+        <SectionTitle>Nossa História</SectionTitle>
+        <SectionContent>
+          Fundada em <HighlightText>2023</HighlightText>, nossa empresa nasceu com o propósito de oferecer uma experiência de compra inovadora e personalizada. Trabalhamos com paixão para conectar nossos clientes aos melhores produtos do mercado.
+        </SectionContent>
+      </AboutSection>
 
-      <Section>
+      <AboutSection>
         <SectionTitle>Nossa Missão</SectionTitle>
         <SectionContent>
-          Conectar pessoas a produtos que melhoram seu dia a dia. Acreditamos no impacto positivo de um bom atendimento, inovação e compromisso com a sustentabilidade.
+          Garantir que cada cliente tenha acesso a produtos de qualidade com praticidade, confiança e preços acessíveis. Nosso objetivo é transformar cada compra em uma experiência inesquecível.
         </SectionContent>
-      </Section>
+      </AboutSection>
 
-      <Section>
-        <SectionTitle>Conheça a Equipe</SectionTitle>
-        <SectionContent>Nosso time é formado por especialistas dedicados a garantir a sua satisfação:</SectionContent>
-        <TeamGrid>
-          <TeamMember>
-            <MemberImage src="https://via.placeholder.com/150" alt="João Silva" />
-            <MemberName>João Silva</MemberName>
-            <p>CEO & Fundador</p>
-          </TeamMember>
-          <TeamMember>
-            <MemberImage src="https://via.placeholder.com/150" alt="Maria Oliveira" />
-            <MemberName>Maria Oliveira</MemberName>
-            <p>Diretora de Marketing</p>
-          </TeamMember>
-          <TeamMember>
-            <MemberImage src="https://via.placeholder.com/150" alt="Paulo Santos" />
-            <MemberName>Paulo Santos</MemberName>
-            <p>Chefe de Operações</p>
-          </TeamMember>
-        </TeamGrid>
-      </Section>
-
-      <Section>
-        <SectionTitle>Por Que Escolher Nossa Loja?</SectionTitle>
+      <AboutSection>
+        <SectionTitle>Por Que Nos Escolher?</SectionTitle>
         <SectionContent>
-          Garantimos produtos de alta qualidade, preços competitivos e um atendimento ao cliente de excelência. Obrigado por fazer parte da nossa história!
+          Além de produtos incríveis, oferecemos atendimento de excelência e um compromisso constante com a sustentabilidade. Junte-se a nós para fazer parte de uma comunidade que valoriza inovação e responsabilidade.
         </SectionContent>
-      </Section>
-
-      <FooterText>Estamos à disposição para ajudar você. Entre em contato conosco!</FooterText>
-    </SobreNosContainer>
+      </AboutSection>
+    </AboutContainer>
   );
 };
 
