@@ -15,6 +15,7 @@ import MinhasCompras from './Pages/MinhasCompras';
 import MetodosPagamento from './Pages/MetodosPagamento';
 import CouponsPage from './Pages/Cupons';
 import { AppContainer, MainContainer, Title, ProductsGrid } from './AppStyles';
+import SobreNos from './Pages/SobreNos';
 
 function App() { 
   const [cartItems, setCartItems] = useState([]); //! Adiciona o estado do carrinho
@@ -85,6 +86,8 @@ function App() {
           <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> //! Adiciona a rota para a página de login
 
           <Route path="/cadastro" element={<Cadastro />} /> //! Adiciona a rota para a página de cadastro
+          
+          <Route path="/about" element={<SobreNos />} /> //! Adiciona a rota para a página SobreNos
 
           <Route
             path="/minha-conta"
