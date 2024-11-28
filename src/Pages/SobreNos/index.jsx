@@ -24,7 +24,7 @@ import {
 import { FaHandshake, FaLeaf, FaUsers, FaRocket } from 'react-icons/fa';
 
 const SobreNos = () => {
-
+  //! Dados fictícios para simular a página
   const events = [
     {
       year: '2021',
