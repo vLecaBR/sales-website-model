@@ -29,7 +29,7 @@ const ProductCard = ({ product, setCartItems }) => {
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
-    }, 3000); // Esconde a notificação após 3 segundos
+    }, 4000); // Esconde a notificação após 3 segundos
   };
 
   return (
