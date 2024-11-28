@@ -39,6 +39,7 @@ Integração com API de pagamento: Para realizar transações reais.
 Sistema de Autenticação: Login de usuários e criação de contas.
 Filtragem de Produtos: Filtros por categoria, preço, entre outros.
 Avaliação de Produtos: Opção de os usuários deixarem avaliações e comentários nos produtos. <br>
+
 🖥️ Demonstração
 Ainda não disponível, mas em breve será implementado um link para uma demonstração ao vivo do projeto.
 
