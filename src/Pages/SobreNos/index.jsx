@@ -1,23 +1,50 @@
 import React from 'react';
-import {
-  AboutContainer,
-  AboutTitle,
-  AboutSection,
-  SectionTitle,
-  SectionContent,
-  HighlightText,
-  TeamCarousel,
-  TeamMember,
-  Timeline,
-  TimelineEvent,
-  IconContainer,
-  IconBox,
-  IconText,
-} from './SobreNos.styles';
+import { 
+    AboutContainer, 
+    AboutTitle, 
+    AboutSection, 
+    SectionTitle, 
+    SectionContent, 
+    HighlightText, 
+    IconContainer, 
+    IconBox, 
+    IconText, 
+    TeamCarousel, 
+    TeamMember, 
+    Timeline, 
+    TimelineEvent, 
+    TimelineLine, 
+    TimelineTooltip, 
+    TimelineContainer, 
+    TimelineEventText 
+  } from './SobreNos.styles';
+  
 
 import { FaHandshake, FaLeaf, FaUsers, FaRocket } from 'react-icons/fa';
 
 const SobreNos = () => {
+
+  const events = [
+    {
+      year: '2021',
+      title: 'Fundação da Empresa',
+      description: 'Início das operações com a missão de entregar soluções inovadoras para o mercado.',
+      details: 'Logo após o início, a empresa se focou em estabelecer uma cultura de inovação e excelência.'
+    },
+    {
+      year: '2022',
+      title: 'Expansão Nacional',
+      description: 'A empresa expandiu suas operações para todo o país, oferecendo mais produtos e serviços.',
+      details: 'Em 2022, o foco foi em ampliar a base de clientes e criar uma rede de parceiros estratégicos.'
+    },
+    {
+      year: '2023',
+      title: 'Internacionalização',
+      description: 'A empresa alcançou novos mercados internacionais, consolidando sua posição global.',
+      details: 'Com uma equipe internacional, a empresa se expandiu para novos territórios, levando sua marca ao exterior.'
+    }
+  ];
+
   return (
     <AboutContainer>
       <AboutTitle>Sobre Nós</AboutTitle>
@@ -76,18 +103,18 @@ const SobreNos = () => {
       <AboutSection>
         <SectionTitle>Nossa Jornada</SectionTitle>
         <Timeline>
-          <TimelineEvent>
-            <span>2023</span>
-            <p>Lançamento da plataforma e primeiras vendas.</p>
-          </TimelineEvent>
-          <TimelineEvent>
-            <span>2024</span>
-            <p>Expansão para mercados internacionais.</p>
-          </TimelineEvent>
-          <TimelineEvent>
-            <span>2025</span>
-            <p>Início de parcerias com marcas globais.</p>
-          </TimelineEvent>
+          <TimelineContainer>
+            <TimelineLine />
+            {events.map((event, index) => (
+              <TimelineEvent key={index}>
+                <TimelineEventText>
+                  <h3>{event.title}</h3>
+                  <p>{event.description}</p>
+                </TimelineEventText>
+                <TimelineTooltip>{event.details}</TimelineTooltip>
+              </TimelineEvent>
+            ))}
+          </TimelineContainer>
         </Timeline>
       </AboutSection>
     </AboutContainer>
