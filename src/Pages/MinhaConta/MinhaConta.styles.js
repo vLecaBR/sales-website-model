@@ -39,7 +39,7 @@ export const Button = styled.button`
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #8445FF; /* Cor do botão */
+  background-color: #572da8; /* Cor do botão */
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
