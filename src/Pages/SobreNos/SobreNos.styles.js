@@ -188,25 +188,40 @@ export const TimelineEvent = styled.div`
   border-radius: 8px;
   width: 320px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  
-  &:hover {
-    background-color: #8445FF;
-    transform: translateX(15px);
-    color: #fff;
+  transition: transform 0.3s ease, border 0.3s ease;
+
+  /* Alterna a posição dos eventos para a esquerda e direita */
+  &:nth-child(odd) {
+    justify-content: flex-start;
   }
 
+  &:nth-child(even) {
+    justify-content: flex-end;
+  }
+
+  /* Estilo para o ponto */
   &::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: -18px;
+    left: -18px; /* Para eventos ímpares */
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #8445FF;
     z-index: 1;
+  }
+
+  &:nth-child(even)::before {
+    left: auto;
+    right: -18px; /* Para eventos pares */
+  }
+
+  /* Alteração no hover: adicionar borda em vez de mudar fundo */
+  &:hover {
+    border: 2px solid #8445FF; /* Borda roxa */
+    transform: translateX(15px);
   }
 `;
 
@@ -228,24 +243,18 @@ export const TimelineEventText = styled.div`
   }
 `;
 
-export const TimelineTooltip = styled.div`
+// Adicionar o estilo para o ano
+export const EventYear = styled.div`
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  margin-right: 15px;
   position: absolute;
-  bottom: 120%;
+  top: -15px; /* Posiciona o ano acima do evento */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  padding: 15px;
-  border-radius: 6px;
-  width: 250px;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-
-  ${TimelineEvent}:hover & {
-    opacity: 1;
-    visibility: visible;
-  }
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
-

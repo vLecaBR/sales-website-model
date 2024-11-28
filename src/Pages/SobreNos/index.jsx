@@ -13,10 +13,11 @@ import {
     TeamMember, 
     Timeline, 
     TimelineEvent, 
-    TimelineLine, 
-    TimelineTooltip, 
+    TimelineLine,  
     TimelineContainer, 
-    TimelineEventText 
+    TimelineEventText,
+    TimelineTooltip,
+    EventYear
   } from './SobreNos.styles';
   
 
@@ -107,11 +108,11 @@ const SobreNos = () => {
             <TimelineLine />
             {events.map((event, index) => (
               <TimelineEvent key={index}>
+                <EventYear>{event.year}</EventYear>
                 <TimelineEventText>
                   <h3>{event.title}</h3>
                   <p>{event.description}</p>
                 </TimelineEventText>
-                <TimelineTooltip>{event.details}</TimelineTooltip>
               </TimelineEvent>
             ))}
           </TimelineContainer>
