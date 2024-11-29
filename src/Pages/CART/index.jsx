@@ -57,7 +57,7 @@ export default function CartPage({ cartItems, setCartItems }) {
         {cartItems.length > 0 && ( 
           <CartSummary>
             <TotalPrice>Total: R$ {total}</TotalPrice>
-            <CheckoutButton>Finalizar Compra</CheckoutButton>
+            <CheckoutButton>Finalizar Compra</CheckoutButton> {/* adicionar onClick = buy */}
           </CartSummary>
         )}
       </CartContainer>
