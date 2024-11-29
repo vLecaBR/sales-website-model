@@ -76,6 +76,7 @@ function App() {
             }
           />
 
+          //! Adiciona a rota para o carrinho
           <Route
             path="/cart"
             element={isAuthenticated ? <Cart cartItems={cartItems} setCartItems={setCartItems} /> : <Navigate to="/login" />} //! Adiciona a rota para o carrinho
