@@ -12,7 +12,7 @@ const CouponsPage = () => {
     },
     {
       id: 2,
-      title: '10% Off em Smartphones',
+      title: '10% Off em Iphones',
       value: '10%',
       conditions: 'Válido para modelos selecionados',
     },
