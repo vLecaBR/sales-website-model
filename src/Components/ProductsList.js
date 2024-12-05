@@ -16,7 +16,7 @@ function ProductsList() {
     };
 
     fetchProducts();
-  }, []); // Executa apenas uma vez quando o componente monta
+  }, []); //! Executa apenas uma vez quando o componente monta
 
   return (
     <div>
