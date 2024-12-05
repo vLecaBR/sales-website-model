@@ -66,21 +66,21 @@ const ConfiguracoesConta = () => {
         <Input
           type="text"
           value={user.name}
-          onChange={(e) => setUser({ ...user, name: e.target.value })} //! Atualiza o estado com o novo valor
+          onChange={(e) => setUser({ ...user, name: e.target.value })} //! Atualiza o estado com o novo valor do nome
           placeholder="Nome"
           required
         />
         <Input
           type="email"
           value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })} //! Atualiza o estado com o novo valor
+          onChange={(e) => setUser({ ...user, email: e.target.value })} //! Atualiza o estado com o novo valor do email
           placeholder="Email"
           required
         />
         <Input
           type="password"
           value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })} //! Atualiza o estado com o novo valor
+          onChange={(e) => setUser({ ...user, password: e.target.value })} //! Atualiza o estado com o novo valor da senha
           placeholder="Nova Senha (deixe em branco para não alterar)"
         />
         <Button type="submit">Atualizar Informações</Button>
