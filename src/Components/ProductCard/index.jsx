@@ -10,6 +10,7 @@ import {
 } from './ProductCard.styles';
 import { Notification } from './ProductCard.styles'; // Reutilizando o estilo existente
 
+
 const ProductCard = ({ product, setCartItems }) => {
   const [showNotification, setShowNotification] = useState(false);
   //! função para adicionar o produto ao carrinho
@@ -29,7 +30,7 @@ const ProductCard = ({ product, setCartItems }) => {
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
-    }, 4000); // Esconde a notificação após 3 segundos
+    }, 4000); // Esconde a notificação após 4 segundos
   };
 
   return (
