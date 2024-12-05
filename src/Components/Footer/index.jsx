@@ -21,7 +21,7 @@ const Footer = () => {
         {/* Seção de Contato */} 
         <FooterSection> 
           <SectionTitle>Contato</SectionTitle>
-          <p>Telefone: (11) 1234-5678</p>
+          <p>Telefone: (16) 1234-5678</p>
           <p>Email: contato@loja.com</p>
         </FooterSection>
 
