@@ -1,7 +1,6 @@
-// src/Components/Header.jsx
 import React, { useState } from 'react';
 import {
-  FiMenu, FiSearch, FiHome, FiUser, FiShoppingCart, FiShoppingBag, FiTag, FiSettings, FiLogOut
+  FiMenu, FiSearch, FiHome, FiUser, FiShoppingCart, FiShoppingBag, FiTag, FiSettings, FiLogOut, FiInfo
 } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -22,9 +21,9 @@ export default function Header() {
 
   const isLoggedIn = localStorage.getItem('token') !== null;
 
-  return ( //! Adiciona o menu lateral e o ícone de fechar
+  return (
     <>
-    {/* Header */} 
+      {/* Header */}
       <StyledHeader>
         <LeftSection>
           <HamburgerMenu onClick={toggleMenu} aria-label="Menu">
@@ -40,7 +39,7 @@ export default function Header() {
         </CenterSection>
 
         <RightSection>
-          {/* //! adiciona itens a direita do header */}
+          {/* Adicione itens ao lado direito do header aqui, se necessário */}
         </RightSection>
       </StyledHeader>
 
@@ -48,6 +47,7 @@ export default function Header() {
       <Sidebar isOpen={isMenuOpen}>
         <SidebarCloseIcon onClick={toggleMenu} />
         
+        {/* Página Inicial */}
         <SidebarItem as={Link} to="/" onClick={toggleMenu}>
           <SidebarIcon>
             <FiHome />
@@ -55,6 +55,7 @@ export default function Header() {
           Home
         </SidebarItem>
 
+        {/* Itens para usuários logados */}
         {isLoggedIn ? (
           <> 
             <SidebarItem as={Link} to="/minha-conta" onClick={toggleMenu}>
@@ -92,6 +93,14 @@ export default function Header() {
               Configurações
             </SidebarItem>
 
+            {/* Sobre Nós */}
+            <SidebarItem as={Link} to="/about" onClick={toggleMenu}>
+              <SidebarIcon>
+                <FiInfo />
+              </SidebarIcon>
+              Sobre Nós
+            </SidebarItem>
+
             <SidebarItem onClick={() => { handleLogout(); toggleMenu(); }} style={{ cursor: 'pointer' }}>
               <SidebarIcon>
                 <FiLogOut />
@@ -100,15 +109,17 @@ export default function Header() {
             </SidebarItem>
           </>
         ) : (
+          /* Item para usuários não logados */
           <SidebarItem as={Link} to="/login" onClick={toggleMenu}>
             <SidebarIcon>
               <FiUser />
             </SidebarIcon>
             Entre / Crie sua conta
           </SidebarItem>
+
+          
         )}
       </Sidebar>
-      
     </>
   );
 }
