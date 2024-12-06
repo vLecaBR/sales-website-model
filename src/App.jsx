@@ -60,7 +60,9 @@ function App() {
       <Header /> //! Adiciona o cabeçalho
 
       <MainContainer>
+
         {/* Adiciona as rotas */}
+        
         <Routes>
         <Route //! Adiciona a rota para a página principal
           path="/"
