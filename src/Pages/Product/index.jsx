@@ -43,9 +43,9 @@ const ProductPage = ({ products, productcard, setCartItems }) => {
       }
     });
 
-    // Exibe a notificação
+    //! Exibe a notificação
     setShowNotification(true);
-    // Oculta a notificação após 3 segundos
+    //! Oculta a notificação após 4 segundos
     setTimeout(() => setShowNotification(false), 4000);
   };
 
