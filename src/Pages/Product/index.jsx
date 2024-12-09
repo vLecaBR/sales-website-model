@@ -28,7 +28,7 @@ const ProductPage = ({ products, productcard, setCartItems }) => {
   const [showNotification, setShowNotification] = useState(false); // Estado para notificação
 
   if (!product) {
-    return <h1>Produto não encontrado</h1>;
+    return <h1>Produtos não encontrados</h1>;
   }
 
   const addToCart = () => {
