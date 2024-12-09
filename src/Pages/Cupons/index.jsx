@@ -27,7 +27,7 @@ const CouponsPage = () => {
 
   return (
     <CouponsContainer> 
-      <h1>Meus Cupons</h1> 
+      <h1>Cupons Disponíveis</h1> 
       <div className="coupons-grid"> 
         {coupons.map(coupon => (
           <CouponCard key={coupon.id}> 
