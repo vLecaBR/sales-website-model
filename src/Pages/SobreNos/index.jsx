@@ -87,7 +87,7 @@ const SobreNos = () => {
         <TeamCarousel>
           <TeamMember>
             <img src="https://github.com/vLecaBR.png" alt="Equipe 1" />
-            <p>Victor Leça- CEO</p>
+            <p>Victor Leça- CEO / Desenvolvedor</p>
           </TeamMember>
           <TeamMember>
             <img src="/team2.jpg" alt="Equipe 2" />
