@@ -40,6 +40,7 @@ export default function Header() {
 
         <RightSection>
           {/* Adicione itens ao lado direito do header aqui, se necessário */}
+          
         </RightSection>
       </StyledHeader>
 
