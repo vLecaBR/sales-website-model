@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// Container do Footer
+//! Container do Footer
 export const FooterContainer = styled.footer`
   background-color: #8445FF;
   color: #fff;
@@ -15,7 +15,7 @@ export const FooterContainer = styled.footer`
   }
 `;
 
-// Conteúdo do Footer
+//! Conteúdo do Footer
 export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ export const FooterContent = styled.div`
   }
 `;
 
-// Seção individual do Footer
+//! Seção individual do Footer
 export const FooterSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ export const FooterSection = styled.div`
   }
 `;
 
-// Título da seção
+//! Título da seção
 export const SectionTitle = styled.h4`
   font-size: 16px; /* Reduz o tamanho da fonte para telas menores */
   margin-bottom: 10px;
@@ -50,7 +50,7 @@ export const SectionTitle = styled.h4`
   }
 `;
 
-// Links de navegação e contato no Footer
+//! Links de navegação e contato no Footer
 export const FooterLink = styled.a`
   color: #E1E2EF;
   text-decoration: none;
@@ -66,7 +66,7 @@ export const FooterLink = styled.a`
 `;
 
 
-// Ícones das redes sociais
+//! Ícones das redes sociais
 export const SocialIcons = styled.div`
   display: flex;
   gap: 15px; /* Espaçamento entre os ícones */
@@ -77,7 +77,7 @@ export const SocialIcons = styled.div`
   }
 `;
 
-// Estilo dos ícones individuais de redes sociais
+//! Estilo dos ícones individuais de redes sociais
 export const SocialIcon = styled.a`
   color: #E1E2EF; /* Cor do ícone */
   font-size: 24px; /* Tamanho do ícone */
@@ -89,7 +89,7 @@ export const SocialIcon = styled.a`
 `;
 
 
-// Copyright no Footer
+//! Copyright no Footer
 export const Copyright = styled.p`
   font-size: 12px; /* Reduz o tamanho da fonte para telas menores */
   color: #5F9F04;
