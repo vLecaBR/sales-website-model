@@ -17,9 +17,9 @@ export default function Login({ setIsAuthenticated }) { //! Adiciona a função 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => { //! Adiciona a função de login
-    e.preventDefault(); // Previne o comportamento padrão do formulário
+    e.preventDefault(); //! Previne o comportamento padrão do form
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', { //! Envia os dados do formulário para a API
+      const response = await axios.post('http://localhost:5000/api/users/login', { //! Envia os dados do form para a API
         email,
         password,
       });
