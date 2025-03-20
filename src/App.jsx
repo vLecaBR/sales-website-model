@@ -37,7 +37,7 @@ function App() {
         console.error('Erro ao buscar produtos:', error);
       }
     };
-
+    
     fetchProducts(); //! Chama a função para buscar os produtos
   }, []);
 
