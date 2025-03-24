@@ -60,9 +60,7 @@ function App() {
   return (
     <AppContainer>
       <Header /> //! Adiciona o cabeçalho
-
       <MainContainer>
-
         {/* Adiciona as rotas */}
         
         <Routes>
@@ -109,7 +107,6 @@ function App() {
           />
         </Routes>
       </MainContainer>
-
       <Footer />
     </AppContainer>
   );
