@@ -66,7 +66,7 @@ function App() {
         {/* Adiciona as rotas */}
         
         <Routes>
-        <Route //! Adiciona a rota para a página principal
+          <Route //! Adiciona a rota para a página principal
           path="/"
           element={
             <>
@@ -79,40 +79,30 @@ function App() {
             </>
           }
         />
-
           <Route
             path="/cart"
             element={isAuthenticated ? <Cart cartItems={cartItems} setCartItems={setCartItems} /> : <Navigate to="/login" />} //! Adiciona a rota para o carrinho
           />
-
           <Route path="/produto/:id" element={<ProductPage products={products} setCartItems={setCartItems} />} /> //! Adiciona a rota para a página do produto
-
           <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> //! Adiciona a rota para a página de login
-
           <Route path="/cadastro" element={<Cadastro />} /> //! Adiciona a rota para a página de cadastro
-          
           <Route path="/about" element={<SobreNos />} /> //! Adiciona a rota para a página SobreNos
-
           <Route
             path="/minha-conta"
             element={isAuthenticated ? <MinhaConta /> : <Navigate to="/login" />} //! Adiciona a rota para a página MinhaConta
           />
-
           <Route
             path="/settings"
             element={isAuthenticated ? <ConfiguracoesConta /> : <Navigate to="/login" />} //! Adiciona a rota para a página de configurações da conta
           />
-
           <Route
             path="/minhas-compras"
             element={isAuthenticated ? <MinhasCompras /> : <Navigate to="/login" />} //! Adiciona a rota para a página de compras
           />
-
           <Route
             path="/metodos-pagamento"
             element={isAuthenticated ? <MetodosPagamento /> : <Navigate to="/login" />} //! Adiciona a rota para a página de métodos de pagamento
           />
-
           <Route
             path="/cupons"
             element={isAuthenticated ? <CouponsPage /> : <Navigate to="/login" />} //! Adiciona a rota para a página de cupons
