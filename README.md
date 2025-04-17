@@ -1,58 +1,62 @@
-sales-website-model - Portfolio Project <br>
-Este repositório contém o código-fonte de um site de vendas modelo, desenvolvido como parte do meu portfólio pessoal. O projeto foi construído usando React, JavaScript, e Styled Components, com o objetivo de demonstrar minhas habilidades em desenvolvimento front-end e construção de interfaces de usuário modernas.
+<h1>sales-website-model - Portfolio Project</h1><br>
+This repository contains the source code of a model sales website, developed as part of my personal portfolio. The project was built using React, JavaScript, and Styled Components, with the goal of showcasing my front-end development skills and ability to build modern user interfaces.
 
-📋 Funcionalidades
-Catálogo de Produtos: Exibe uma lista de produtos com imagens, descrições e preços.
-Página de Detalhes do Produto: Mostra informações detalhadas sobre o produto selecionado.
-Carrinho de Compras: Permite adicionar, remover e atualizar a quantidade de produtos.
-Simulação de Checkout: Exibe o resumo do pedido e as opções de pagamento.
-Responsividade: Layout ajustado para diferentes tamanhos de tela, proporcionando uma boa experiência em dispositivos móveis e desktops. <br>
+📋 Features
+Product Catalog: Displays a list of products with images, descriptions, and prices.
+Product Detail Page: Shows detailed information about the selected product.
+Shopping Cart: Allows users to add, remove, and update product quantities.
+Checkout Simulation: Displays order summary and payment options.
+Responsive Design: Layout adapts to different screen sizes, providing a good experience on both mobile devices and desktops. <br>
 
-🛠️ Tecnologias Utilizadas
-React: Biblioteca JavaScript para construção de interfaces de usuário baseadas em componentes.
-JavaScript (ES6+): Linguagem de programação usada para a lógica do site.
-Styled Components: Biblioteca para estilização de componentes com CSS-in-JS, permitindo a criação de componentes reutilizáveis e isolados. <br>
+🛠️ Technologies Used
+React: JavaScript library for building component-based user interfaces.
+JavaScript (ES6+): Programming language used for the site's logic.
+Styled Components: Library for styling components using CSS-in-JS, allowing for reusable and isolated components. <br>
 
-⚙️ Como Rodar o Projeto
-Pré-requisitos
-Certifique-se de ter o Node.js instalado na sua máquina. Você pode verificar se o Node está instalado com o seguinte comando:<br>
+⚙️ How to Run the Project
+Prerequisites
+Make sure you have Node.js installed on your machine. You can check if Node is installed with the following command:<br>
 node -v
 
-Passo a Passo
-Clone este repositório para sua máquina local:
+Step-by-Step
+Clone this repository to your local machine:
 git clone https://github.com/vLecaBR/sales-website-model
 
-Navegue até a pasta do projeto:<br>
+Navigate to the project folder:<br>
 cd sales-website-model
 
-Instale as dependências:<br>
+Install the dependencies:<br>
 npm install
 
-Inicie o servidor de desenvolvimento:<br>
+Start the development server:<br>
 npm start
 
-O projeto será aberto em http://localhost:3000 no seu navegador.
+The project will open at http://localhost:3000 in your browser.
 
-🖌️ Estilização com Styled Components
-A estilização do site foi realizada com Styled Components, permitindo o uso de CSS diretamente nos arquivos JavaScript, garantindo modularidade e evitando conflitos de estilo. Cada componente possui seu próprio estilo encapsulado, o que facilita a manutenção e expansão do projeto.
+🖌️ Styling with Styled Components
+The website styling was done using Styled Components, enabling the use of CSS directly within JavaScript files. This ensures modularity and avoids style conflicts. Each component has its own encapsulated style, making it easier to maintain and scale the project.
 
-💡 Possíveis Melhorias Futuras
-Integração com API de pagamento: Para realizar transações reais.
-Sistema de Autenticação: Login de usuários e criação de contas.
-Filtragem de Produtos: Filtros por categoria, preço, entre outros.
-Avaliação de Produtos: Opção de os usuários deixarem avaliações e comentários nos produtos. <br>
+💡 Potential Future Improvements
 
-🖥️ Demonstração
-Ainda não disponível, mas em breve será implementado um link para uma demonstração ao vivo do projeto.
+Payment API Integration: For real transaction processing.
 
-📬 Contato
-Caso tenha dúvidas ou sugestões sobre este projeto, sinta-se à vontade para entrar em contato:<br>
+Authentication System: User login and account creation.
+
+Product Filtering: Filters by category, price, and more.
+
+Product Reviews: Allow users to leave ratings and comments on products. <br>
+
+🖥️ Demo
+Not available yet, but a link to a live demo will be added soon.
+
+📬 Contact
+If you have any questions or suggestions about this project, feel free to reach out:<br>
 
 Email: vitartasleca@gmail.com <br>
-LinkedIn: [Linkedin](https://www.linkedin.com/in/victor-leca-vlkbr/) <br>
-Nota: Este projeto foi desenvolvido com fins educacionais e como parte do meu portfólio pessoal. Não há funcionalidades de pagamento real ou processamento de pedidos.
+LinkedIn: LinkedIn <br>
+Note: This project was developed for educational purposes and as part of my personal portfolio. It does not include real payment functionalities or order processing.
 
-Licença <br>
-Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes. <br>
+License<br>
+This project is licensed under the MIT License – see the LICENSE file for details. <br>
 
-Espero que este projeto ajude a demonstrar minhas habilidades e que seja útil para quem estiver buscando inspiração para construir seu próprio site de e-commerce! 
+I hope this project helps showcase my skills and serves as inspiration for anyone looking to build their own e-commerce website!
