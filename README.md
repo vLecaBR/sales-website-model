@@ -53,7 +53,8 @@ Not available yet, but a link to a live demo will be added soon.
 If you have any questions or suggestions about this project, feel free to reach out:<br>
 
 Email: vitartasleca@gmail.com <br>
-LinkedIn: LinkedIn <br>
+LinkedIn: [LinkedIn](https://www.linkedin.com/in/victor-leca-vlkbr/) <br>
+
 Note: This project was developed for educational purposes and as part of my personal portfolio. It does not include real payment functionalities or order processing.
 
 License<br>
