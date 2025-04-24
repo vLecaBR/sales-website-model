@@ -1,5 +1,5 @@
 <h1>sales-website-model - Portfolio Project</h1><br>
-This repository contains the source code of a model sales website, developed as part of my personal portfolio. The project was built using React, JavaScript, and Styled Components, with the goal of showcasing my front-end development skills and ability to build modern user interfaces.
+This repository contains the source code of a model sales website, developed as part of my personal portfolio. The project was built using React, JavaScript, and Styled Components, with the goal of showcasing my front-end development skills and ability to build modern user interfaces. <br>
 
 
 📋 Features <br>
@@ -19,21 +19,21 @@ Styled Components: Library for styling components using CSS-in-JS, allowing for 
 ⚙️ How to Run the Project <br>
 Prerequisites
 Make sure you have Node.js installed on your machine. You can check if Node is installed with the following command:<br>
-node -v
-<br>
+node -v <br>
+
 Step-by-Step
 Clone this repository to your local machine:
-git clone https://github.com/vLecaBR/sales-website-model
-<br>
+git clone https://github.com/vLecaBR/sales-website-model <br>
+
 Navigate to the project folder:<br>
-cd sales-website-model
-<br>
+cd sales-website-model <br>
+
 Install the dependencies:<br>
-npm install
-<br>
+npm install <br>
+
 Start the development server:<br>
-npm start
-<br>
+npm start <br>
+
 The project will open at http://localhost:3000 in your browser.
 
 
@@ -43,11 +43,8 @@ The website styling was done using Styled Components, enabling the use of CSS di
 
 💡 Potential Future Improvements <br>
 Payment API Integration: For real transaction processing.
-
 Authentication System: User login and account creation.
-
 Product Filtering: Filters by category, price, and more.
-
 Product Reviews: Allow users to leave ratings and comments on products. <br>
 
 
