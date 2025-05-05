@@ -83,7 +83,7 @@ A estilização do site foi feita utilizando a biblioteca Styled Components, que
 
 ### 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+Este projeto foi desenvolvido para fins educacionais e uso de portfólio. Não inclui funcionalidade de pagamento real ou processamento de pedidos.
 
 ---
 ---
