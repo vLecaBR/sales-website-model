@@ -83,7 +83,7 @@ A estilização do site foi feita utilizando a biblioteca Styled Components, que
 
 ### 📄 Licença
 
-Este projeto foi desenvolvido para fins educacionais e uso de portfólio. Não inclui funcionalidade de pagamento real ou processamento de pedidos.
+Este projeto foi desenvolvido para fins educacionais e uso de portfólio. Entrar em contato em caso de querer utilizar.
 
 ---
 ---
@@ -172,4 +172,5 @@ Styling was done using Styled Components, which allows writing CSS directly with
 
 ### 📄 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project was developed for educational purposes and portfolio use. Please contact us if you would like to use it.
+
