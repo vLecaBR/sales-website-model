@@ -86,6 +86,8 @@ A estilização do site foi feita utilizando a biblioteca Styled Components, que
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
 
 ---
+---
+---
 
 # 🇺🇸 README in English
 # 🛒 sales-website-model - Portfolio Project
