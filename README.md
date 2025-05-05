@@ -98,13 +98,17 @@ This repository contains the source code of a model sales website, developed as 
 - 📄 Product Detail Page: Shows detailed information about each product  
 - 🛒 Shopping Cart: Allows users to add, remove, and update quantities  
 - 💳 Checkout Simulation: Displays order summary and payment options  
-- 📱 Responsive Design: Layout adapts to different screen sizes, offering a good experience on mobile and desktop devices  
+- 📱 Responsive Design: Layout adapts to different screen sizes, offering a good experience on mobile and desktop devices
+
+---
 
 ### 🛠️ Technologies Used
 
 - React – JavaScript library for building component-based user interfaces  
 - JavaScript (ES6+) – Programming language used for the site's logic  
-- Styled Components – CSS-in-JS library for modular and scoped styling  
+- Styled Components – CSS-in-JS library for modular and scoped styling
+
+---
 
 ### ⚙️ How to Run the Project
 
@@ -130,27 +134,39 @@ node -v
 
 The app will open automatically at: http://localhost:3000
 
+---
+
 ### 🎨 Styling with Styled Components
 
 Styling was done using Styled Components, which allows writing CSS directly within JavaScript files. Each component has its own encapsulated styles, making the codebase easier to maintain and scale.
+
+---
 
 ### 💡 Potential Future Improvements
 
 - Payment API integration for real transaction processing  
 - Authentication system for user accounts  
 - Product filtering by category, price, and more  
-- Product reviews and rating system  
+- Product reviews and rating system
+
+---
 
 ### 🖥️ Demo
 
 🚧 *Not available yet. A live demo link will be added soon.*
+
+---
 
 ### 📬 Contact
 
 - Email: vitartasleca@gmail.com  
 - LinkedIn: https://www.linkedin.com/in/victor-leca-vlkbr/
 
+---
+
 > ℹ️ This project was developed for educational purposes and portfolio use. It does not include real payment functionality or order processing.
+
+---
 
 ### 📄 License
 
