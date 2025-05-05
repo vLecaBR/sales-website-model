@@ -3,6 +3,8 @@
 
 Este repositório contém o código-fonte de um site de vendas modelo, desenvolvido como parte do meu portfólio pessoal. O projeto foi construído com React, JavaScript e Styled Components, com o objetivo de demonstrar minhas habilidades em desenvolvimento front-end e na criação de interfaces modernas.
 
+---
+
 ### ✨ Funcionalidades
 
 - 🛍️ Catálogo de Produtos: Exibe uma lista de produtos com imagens, descrições e preços  
@@ -11,11 +13,15 @@ Este repositório contém o código-fonte de um site de vendas modelo, desenvolv
 - 💳 Simulação de Checkout: Apresenta o resumo do pedido e opções de pagamento  
 - 📱 Design Responsivo: Adapta o layout a diferentes tamanhos de tela, oferecendo uma boa experiência em dispositivos móveis e desktops  
 
+---
+
 ### 🛠️ Tecnologias Utilizadas
 
 - React – Biblioteca JavaScript para construção de interfaces baseadas em componentes  
 - JavaScript (ES6+) – Linguagem de programação utilizada na lógica do site  
-- Styled Components – Estilização com CSS-in-JS, permitindo componentes reutilizáveis e encapsulados  
+- Styled Components – Estilização com CSS-in-JS, permitindo componentes reutilizáveis e encapsulados
+
+---
 
 ### ⚙️ Como Rodar o Projeto
 
@@ -41,27 +47,39 @@ node -v
 
 O projeto será aberto automaticamente no navegador em: http://localhost:3000
 
+---
+
 ### 🎨 Estilização com Styled Components
 
 A estilização do site foi feita utilizando a biblioteca Styled Components, que permite escrever estilos CSS diretamente nos arquivos JavaScript. Isso facilita a criação de componentes modulares, reutilizáveis e com estilos isolados, evitando conflitos.
+
+---
 
 ### 💡 Melhorias Futuras
 
 - Integração com API de pagamento real  
 - Sistema de autenticação com login e criação de conta  
 - Filtros por categoria, faixa de preço, etc.  
-- Avaliações de produtos: sistema de comentários e notas pelos usuários  
+- Avaliações de produtos: sistema de comentários e notas pelos usuários
+
+---
 
 ### 🖥️ Demonstração
 
 🚧 *Ainda não disponível. Um link para a demo será adicionado em breve.*
+
+---
 
 ### 📬 Contato
 
 - Email: vitartasleca@gmail.com  
 - LinkedIn: https://www.linkedin.com/in/victor-leca-vlkbr/
 
+---
+
 > ℹ️ Este projeto foi desenvolvido para fins educacionais e de portfólio. Não possui funcionalidades reais de pagamento ou processamento de pedidos.
+
+---
 
 ### 📄 Licença
 
